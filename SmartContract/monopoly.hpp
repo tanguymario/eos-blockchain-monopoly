@@ -28,6 +28,12 @@ public:
   // @abi action
   void claimtreasure(const account_name player, const uint64_t cityId);
 
+  // @abi action
+  void clearcities(const account_name player);
+
+  // @abi action
+  void clearplayers(const account_name player);
+
 private:
     // @abi table cities i64
     struct city {
@@ -60,4 +66,4 @@ private:
     PlayerTable m_playerTable;
 };
 
-EOSIO_ABI(Monopoly, (buy)(moveto)(claimtreasure)(addtreasure)(addcity))
+EOSIO_ABI(Monopoly, (buy)(moveto)(claimtreasure)(addtreasure)(addcity)(clearcities)(clearplayers))

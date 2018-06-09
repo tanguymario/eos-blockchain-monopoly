@@ -7,6 +7,23 @@
 
 using namespace std;
 
+void Monopoly::clearcities(const account_name player) {
+	require_auth(_self);
+
+	auto iterator = m_cityTable.begin();
+	while (iterator != m_cityTable.end()) {
+		iterator = m_cityTable.erase(iterator);
+	}
+}
+
+void Monopoly::clearplayers(const account_name player) {
+	require_auth(_self);
+	auto iterator = m_playerTable.begin();
+	while (iterator != m_playerTable.end()) {
+		iterator = m_playerTable.erase(iterator);
+	}
+}
+
 void Monopoly::addtreasure(const uint64_t cityId, const uint64_t value) {
 	require_auth(_self);
 	auto cityItr = m_cityTable.find( cityId );
