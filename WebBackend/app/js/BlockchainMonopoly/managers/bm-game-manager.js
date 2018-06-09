@@ -181,17 +181,7 @@ class BMGameManager {
   }
 
   refresh() {
-    
-    this.stage.draw();
-
-    /*
-    var nbLayers = this.layersArray.length;
-    for (var i = 0; i < nbLayers; i++) {
-      var layer = this.layersArray[i];
-      console.log(layer);
-      layer.destroy();
-    }
-    */
+    this.layers.game.refresh();
   }
 
   addImage(src, ...konvaNodes) { this._konvaImages.add(src, konvaNodes); }

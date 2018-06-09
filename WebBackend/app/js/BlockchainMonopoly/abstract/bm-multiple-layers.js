@@ -1,4 +1,4 @@
-var konva = require('konva');
+var Konva = require('konva');
 var BMLayer = require('./bm-layer.js');
 
 // TODO make it extends KonvaGroup
@@ -18,6 +18,17 @@ class BMMultipleLayers {
   preload() { throw "[BMMultipleLayers] Abstract! Not implemented"; }
   start() { throw "[BMMultipleLayers] Abstract! Not implemented"; }
   update() { }
+
+  destroyLayers() {
+    this.layers.forEach(
+      (function(layer) {
+        if (layer instanceof Konva.Node) {
+          layer.destroy();
+        }
+      }).bind(this)
+    );
+    this.layers = [];
+  }
 
   batchDraw() {
    this.layers.forEach(

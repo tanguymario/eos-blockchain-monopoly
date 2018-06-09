@@ -6,6 +6,7 @@ var BMCity = require('../data-classes/bm-city.js');
 var BMCitiesConnection = require('../data-classes/bm-cities-connection.js');
 
 var JSONLoader = require('../../utils/json-loader.js');
+var JSONsLoader = require('../../utils/jsons-loader.js');
 var basics = require('../../utils/basics.js');
 var exists = basics.exists;
 
@@ -15,17 +16,17 @@ class BMGameLayers extends BMMultipleLayers {
     
     this.cities = {};
     this.connections = [];
+
+    this.isRefreshing = false;
   }
 
   initialize() {
-    this.layers.forEach(
-      (function(layer) {
-
-      }).bind(this)
-    );
+    
   }
 
   preload() {
+    this.isRefreshing = true;
+
     this.blockchainCitiesDataJSONLoader = new JSONLoader('assets/json/blockchainLocalTest.json', { keepData: true });
     this.gameManager.addJSONLoader(this.blockchainCitiesDataJSONLoader);
 
@@ -37,6 +38,39 @@ class BMGameLayers extends BMMultipleLayers {
   }
 
   start() {
+    this.onRefreshData();
+  }
+
+  update() {
+
+  }
+
+  refresh() {
+    if (this.isRefreshing) {
+      return;
+    }
+
+    this.isRefreshing = true;
+    
+    var jsonsLoader = new JSONsLoader();
+    jsonsLoader.callbackSuccess = (function() {
+      this.onRefreshData();
+      this.draw();
+    }).bind(this);
+
+    this.blockchainCitiesDataJSONLoader = new JSONLoader('assets/json/blockchainLocalTest.json', { keepData: true });
+    jsonsLoader.add(this.blockchainCitiesDataJSONLoader);
+    
+    this.blockchainPlayerDataJSONLoader = new JSONLoader('assets/json/blockchainPlayer.json', { keepData: true });
+    jsonsLoader.add(this.blockchainPlayerDataJSONLoader);
+
+    this.mapCitiesDataJSONLoader = new JSONLoader('assets/json/mapCitiesData.json', { keepData: true });
+    jsonsLoader.add(this.mapCitiesDataJSONLoader);
+
+    jsonsLoader.load();
+  }
+
+  onRefreshData() {
     if (!exists(this.blockchainCitiesDataJSONLoader.getData())) {
       console.error("[BMGameLayers] Could not retrieve blockchain cities");
       return;
@@ -54,20 +88,28 @@ class BMGameLayers extends BMMultipleLayers {
       this.mapCitiesDataJSONLoader.getData()
     );
 
+    // Clear everything
+    this.destroyLayers();
+    this.cities = {};
+    this.connections = [];
+
     // Create cities and connections
     this.initializeCities(blockchainCitiesJSON);
 
     // Initialize player with blockchain data
     this.gameManager.player.initialize(this.cities, this.blockchainPlayerDataJSONLoader.getData());
 
+    // TODO 
+    // this.scale(this.gameManager.eventsManager.scale);
+
+    console.log("REFRESH");
+
     // Finally clear the loaders
     delete this.mapCitiesDataJSONLoader;
     delete this.blockchainPlayerDataJSONLoader;
     delete this.mapCitiesDataJSONLoader;
-  }
 
-  update() {
-
+    this.isRefreshing = false;
   }
 
   setupBlockchainData(blockchainCitiesJSON, mapCitiesJSON) {
