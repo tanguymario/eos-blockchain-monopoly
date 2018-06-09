@@ -1,8 +1,8 @@
 - setup accounts (do only once at beginning)
-	- cleos create wallet (remember the password)
+	- cleos wallet create (remember the password)
 	- cleos wallet import 5J9UGDfqqjdKh5waZqp8cc1pUFBguvF4xtg5QNicCaRgugn9Ta8
 	- cleos wallet import 5JqCiws4qarUV1uuCqRBcE1pjRqA6wfEaNFZZY1WXp1kQSjW5hw
-	- cleos create account eosio monopoly 5J9UGDfqqjdKh5waZqp8cc1pUFBguvF4xtg5QNicCaRgugn9Ta8 5J9UGDfqqjdKh5waZqp8cc1pUFBguvF4xtg5QNicCaRgugn9Ta8
+	- cleos create account eosio monopoly EOS7aAYuDjo5hZFGR5MA2ErL5WAcwjfbjhDGeHyHhPWhhnHKmyR8X EOS7aAYuDjo5hZFGR5MA2ErL5WAcwjfbjhDGeHyHhPWhhnHKmyR8X
 
 - deploy contract
 	- create a new directory called monopoly under contracts
