@@ -38,19 +38,23 @@ class BMPlayer {
     }
 
     this.data = playerJSON;
-    cities.forEach(
-      (function(city) {
+
+    var citiesKeys = Object.keys(cities);
+    citiesKeys.forEach(
+      (function(cityKey) {
+        var city = cities[cityKey];
         if (city.data.owner === this.address) {
           city.setOwnedCity();
           this.ownedCities.push(city);
         } 
-
-        if (city.id === playerJSON.currentCityId) {
-          city.setCurrentCity(this);
-          this.currentCity = city;
-        }
       }).bind(this)
     );
+
+    var currentPlayerCity = cities[playerJSON.currentCityId];
+    if (currentPlayerCity) {
+      currentPlayerCity.setCurrentCity(this);
+      this.currentCity = currentPlayerCity;
+    }
   }
 }
 

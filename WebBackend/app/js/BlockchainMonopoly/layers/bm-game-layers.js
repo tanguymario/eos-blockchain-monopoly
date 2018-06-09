@@ -13,12 +13,16 @@ class BMGameLayers extends BMMultipleLayers {
   constructor(stage, gameManager, options={}) {
     super(stage, gameManager, options);
     
-    this.cities = [];
+    this.cities = {};
     this.connections = [];
   }
 
   initialize() {
+    this.layers.forEach(
+      (function(layer) {
 
+      }).bind(this)
+    );
   }
 
   preload() {
@@ -116,8 +120,10 @@ class BMGameLayers extends BMMultipleLayers {
     );
 
     // Scale cities
-    this.cities.forEach(
-      (function(city) {
+    var citiesKeys = Object.keys(this.cities);
+    citiesKeys.forEach(
+      (function(cityKey) {
+        var city = this.cities[cityKey];
         city.view.scale(inverseScale);
       }).bind(this)
     );
@@ -158,14 +164,46 @@ class BMGameLayers extends BMMultipleLayers {
         var cityJSON = citiesJSON[cityJSONKey];
         var layer = this.getLayerAt(cityJSON.layerIndex);
         var city = new BMCity(cityJSONKey, cityJSON, layer, this);
-        this.cities.push(city);
+        this.cities[cityJSONKey] = city;
       }).bind(this)
     );
   }
 
   createConnectionsBetweenCities() {
-    // TODO we suppose that the JSON is sorted!!
+    var citiesKeys = Object.keys(this.cities);
+    citiesKeys.forEach(
+      (function(cityKey) {
+        var city = this.cities[cityKey];
+        var nbNeighbours = city.data.neighbors.length;
+        for (var j = 0; j < nbNeighbours; j++) {
+          var idNeighbor = city.data.neighbors[j];
+          var neighborCity = this.cities[idNeighbor];
+          if (!neighborCity) {
+            continue;
+          }
 
+          var alreadyConnected = false;
+          var nbNeighborCityConnections = neighborCity.connections.length;
+          for (var k = 0; k < nbNeighborCityConnections; k++) {
+            var connection = neighborCity.connections[k];
+            if (connection.city0 === city ||
+                connection.city1 === city) {
+              alreadyConnected = true;
+              break;
+            }
+          }
+
+          if (alreadyConnected) {
+            continue;
+          }
+
+          var connection = new BMCitiesConnection(city, neighborCity);
+          this.connections.push(connection);
+        }
+      }).bind(this)
+    );
+
+    /*
     var nbCities = this.cities.length;
     for (var i = 0; i < nbCities; i++) {
       var city = this.cities[i];
@@ -185,6 +223,7 @@ class BMGameLayers extends BMMultipleLayers {
         this.connections.push(connection);
       }
     }
+    */
   }
 }
 

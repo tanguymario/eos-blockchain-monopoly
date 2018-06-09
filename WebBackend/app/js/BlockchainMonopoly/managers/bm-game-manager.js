@@ -31,6 +31,9 @@ class BMGameManager {
 
     this.player = null;
 
+    this.refreshIntervalId = null;
+    this.refreshTime = 15000;
+
     this.initialize();
   }
 
@@ -109,14 +112,11 @@ class BMGameManager {
 
     this.eventsManager.initialize(this);
 
-    console.log("no refresh");
-    return;
-
     // Set refresh loop once loaded
-    setInterval(
+    this.refreshIntervalId = setInterval(
       (function(){
         this.refresh();
-      }).bind(this), 15000
+      }).bind(this), this.refreshTime
     );
     
     // No loop
@@ -181,18 +181,17 @@ class BMGameManager {
   }
 
   refresh() {
-    // TODO remove this plz
-    location.reload(); 
-    return;
+    
+    this.stage.draw();
 
+    /*
     var nbLayers = this.layersArray.length;
     for (var i = 0; i < nbLayers; i++) {
       var layer = this.layersArray[i];
       console.log(layer);
       layer.destroy();
     }
-
-    this.initialize();
+    */
   }
 
   addImage(src, ...konvaNodes) { this._konvaImages.add(src, konvaNodes); }

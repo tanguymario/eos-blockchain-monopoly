@@ -2,6 +2,7 @@ var BMLayer = require('../abstract/bm-layer.js');
 var basics = require('../../utils/basics.js');
 var BlockchainInterface = require('../backend/blockchain-interface.js');
 var executeFunctionSafely = basics.executeFunctionSafely;
+var exists = basics.exists;
 
 class BMUIActionsLayer extends BMLayer {
   static actions() { 
@@ -186,12 +187,14 @@ class BMUIActionsLayer extends BMLayer {
     this.buttonMoveTo.opacity(0.5);
     this.buttonDescMoveTo.opacity(0.5);
     if (this.gameManager.player.ownedCities.indexOf(city) != -1) {
+      // Teleport
       if (city !== this.gameManager.player.currentCity) {
         this.buttonMoveTo.listening(true);
         this.buttonMoveTo.opacity(1.0);
         this.buttonDescMoveTo.opacity(1.0);
       }
     } else if (this.gameManager.player.currentCity) {
+      // Move to a neighbour
       var currentCity = this.gameManager.player.currentCity;
       var currentCityNeighbours = currentCity.getNeighbours();
       var nbCurrentCityNeighbours = currentCityNeighbours.length;
@@ -204,6 +207,11 @@ class BMUIActionsLayer extends BMLayer {
           break;
         }
       }
+    } else if (!exists(this.gameManager.player.currentCity)) {
+      // The player can move anywhere
+      this.buttonMoveTo.listening(true);
+      this.buttonMoveTo.opacity(1.0);
+      this.buttonDescMoveTo.opacity(1.0);
     }
     
     // Check for treasure in current city
