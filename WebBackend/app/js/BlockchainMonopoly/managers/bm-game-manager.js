@@ -12,9 +12,10 @@ var BMUIActionsLayer = require('../layers/bm-ui-actions-layer.js');
 var TimeManager = require('./time-manager.js');
 
 class BMGameManager {
-  constructor(stage) {
+  constructor(stage, eventsManager) {
     this.stage = stage;
-    
+    this.eventsManager = eventsManager;
+
     this._konvaImages = new KonvaImages();
     this._jsonsLoader = new JSONsLoader();
     this._jsonsLoaders = [];
@@ -105,6 +106,8 @@ class BMGameManager {
     this.stage.draw();
 
     this.timeManager = new TimeManager();
+
+    this.eventsManager.initialize(this);
 
     console.log("no refresh");
     return;

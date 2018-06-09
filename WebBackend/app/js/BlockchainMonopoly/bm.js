@@ -13,8 +13,8 @@ class BM {
       height: height
     });
 
-    this.gameManager = new BMGameManager(this.stage);
-    this.eventsManager = new BMEventsManager(this.stage, this.gameManager);
+    this.eventsManager = new BMEventsManager(this.stage);
+    this.gameManager = new BMGameManager(this.stage, this.eventsManager);
   }
 }
 

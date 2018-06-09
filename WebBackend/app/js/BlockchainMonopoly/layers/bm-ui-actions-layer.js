@@ -173,8 +173,8 @@ class BMUIActionsLayer extends BMLayer {
     this.buttonBuy.opacity(0.5);
     this.buttonBuy.opacity(0.5);
     this.buttonDescBuy.opacity(0.5);
-    if (this.gameManager.player.currentCity === city &&
-        city.player !== this.gameManager.player) {
+    if (this.gameManager.player.currentCity === city && 
+        !city.ownedByPlayer) {
       this.buttonBuy.listening(true);
       this.buttonBuy.opacity(1.0);
       this.buttonBuy.opacity(1.0);
@@ -208,7 +208,7 @@ class BMUIActionsLayer extends BMLayer {
     
     // Check for treasure in current city
     if (this.gameManager.player.currentCity === city && 
-      ("" + city.data.treasure !== "0")) {
+      ("" + city.data.treasure >= 0)) {
       this.buttonCollect.listening(true);
       this.buttonCollect.opacity(1.0);
       this.buttonDescCollect.opacity(1.0);

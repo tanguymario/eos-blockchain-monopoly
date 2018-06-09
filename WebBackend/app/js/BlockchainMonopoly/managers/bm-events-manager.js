@@ -1,9 +1,9 @@
 var constants = require('../../utils/constants.js');
 
 class BMEventsManager {
-  constructor(stage, gameManager) {
+  constructor(stage) {
     this.stage = stage;
-    this.gameManager = gameManager;
+    this.gameManager = undefined;
 
     this.pos = {
       x: 0,
@@ -26,27 +26,29 @@ class BMEventsManager {
         e.evt.preventDefault();
       }).bind(this)
     );
-    
-    this.attachEvents();
   }
 
-  attachEvents() {
-    this.stage.on('wheel', 
+  initialize(gameManager) {
+    this.gameManager = gameManager;
+
+    var eventsNode = this.stage;
+
+    eventsNode.on('wheel', 
       (function(e) {
         this.onStageWheel(e);
       }).bind(this)
     );
-    this.stage.on('mousedown', 
+    eventsNode.on('mousedown', 
       (function(e) {
         this.onStageMouseDown(e);
       }).bind(this)
     );
-    this.stage.on('mouseup',
+    eventsNode.on('mouseup',
       (function(e) {
         this.onStageMouseUp(e);
       }).bind(this)
     );
-    this.stage.on('mousemove',
+    eventsNode.on('mousemove',
       (function(e) {
         this.onStageMouseMove(e);
       }).bind(this)

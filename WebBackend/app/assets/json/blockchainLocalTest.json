@@ -793,7 +793,7 @@
     "lat": 48.8666666667,
     "lon": 2.33333,
     "name": "Paris",
-    "treasure": 0,
+    "treasure": 50,
     "owner": "Michel",
     "price": 500,
     "layerIndex": 3,

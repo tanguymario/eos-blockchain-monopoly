@@ -13,7 +13,6 @@ class BMCity {
     this.stage = this.gameLayer.stage;
     this.gameManager = this.gameLayer.gameManager;
 
-    this.player = undefined;
     this.ownedByPlayer = false;
     this.currentCityPlayer = false;
     this.isNearFromPlayer = false;

@@ -23,14 +23,14 @@ class BMCityStyle {
   static styleCurrent() {
     return {
       circleCityFill: "#4286f4",
-      circleCityStrokeWidth: 5.0
+      circleCityStrokeWidth: 1.0
     }; 
   }
 
   static styleNear() {
     return {
       circleCityStroke: "red",
-      circleCityStrokeWidth: 1.0
+      circleCityStrokeWidth: 2.0
     }; 
   }
 

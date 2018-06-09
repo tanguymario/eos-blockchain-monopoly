@@ -10,7 +10,7 @@ class BMPlayer {
   constructor (gameManager) {
     
     // Decomment this if we want to force client to type his ID each time
-    // store.remove(BMPlayer.StoreStringID);
+    store.remove(BMPlayer.StoreStringID);
     
     this.address = this._getAddress();
     this.data = undefined;
