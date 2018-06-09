@@ -1,0 +1,25 @@
+@font-face {
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #F0F0F0;
+}
+
+canvas {
+	position: absolute;
+}
+
+#viewer {
+	position: absolute;
+	border: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}

@@ -1,0 +1,9 @@
+module.exports.PI = Math.PI;
+module.exports.PI2 = Math.PI * 2;
+module.exports.EPSILON = 1.0e-4;
+module.exports.INFINITY = 1.0e30;
+module.exports.DTOR = 0.0174532925199433;
+module.exports.RTOD = 57.295779513082323;
+module.exports.BTN_LEFT_CLICK = 0;
+module.exports.BTN_MIDDLE_CLICK = 1;
+module.exports.BTN_RIGHT_CLICK = 2;

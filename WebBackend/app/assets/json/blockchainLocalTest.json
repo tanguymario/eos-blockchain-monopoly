@@ -1,0 +1,2352 @@
+{
+  "0": {
+    "lat": 9.5,
+    "lon": 44.05,
+    "name": "Hargeisa",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["194", "67"]
+  },
+  "1": {
+    "lat": -54.28333,
+    "lon": -36.5,
+    "name": "King Edward Point",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["75"]
+  },
+  "2": {
+    "lat": -49.3,
+    "lon": 70.21666,
+    "name": "Port-aux-Français",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["137"]
+  },
+  "3": {
+    "lat": 31.7666666667,
+    "lon": 35.23333,
+    "name": "Jerusalem",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["106"]
+  },
+  "4": {
+    "lat": 60.11666,
+    "lon": 19.9,
+    "name": "Mariehamn",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["73", "201"]
+  },
+  "5": {
+    "lat": -0.547,
+    "lon": 166.92086,
+    "name": "Yaren",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["193", "114", "139"]
+  },
+  "6": {
+    "lat": 18.073,
+    "lon": -63.0822,
+    "name": "Marigot",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["37", "190", "15"]
+  },
+  "7": {
+    "lat": -9.16666,
+    "lon": -171.83333,
+    "name": "Atafu",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["181"]
+  },
+  "8": {
+    "lat": 27.15361,
+    "lon": -13.20333,
+    "name": "El-Aaiún",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["136", "145"]
+  },
+  "9": {
+    "lat": 34.5166666667,
+    "lon": 69.18333,
+    "name": "Kabul",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["160", "206"]
+  },
+  "10": {
+    "lat": 41.3166666667,
+    "lon": 19.81666,
+    "name": "Tirana",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["117", "143"]
+  },
+  "11": {
+    "lat": 36.7,
+    "lon": 3.05,
+    "name": "Algiers",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["13"]
+  },
+  "12": {
+    "lat": -14.2666666667,
+    "lon": -170.7,
+    "name": "Pago Pago",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["155", "181"]
+  },
+  "13": {
+    "lat": 42.0,
+    "lon": 1.51666,
+    "name": "Andorra la Vella",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["11", "197", "141"]
+  },
+  "14": {
+    "lat": -8.83333333333,
+    "lon": 13.21666,
+    "name": "Luanda",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["56", "176"]
+  },
+  "15": {
+    "lat": 18.2166666667,
+    "lon": -63.05,
+    "name": "The Valley",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["6"]
+  },
+  "16": {
+    "lat": 17.1166666667,
+    "lon": -61.85,
+    "name": "Saint John's",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["177"]
+  },
+  "17": {
+    "lat": -34.5833333333,
+    "lon": -58.66666,
+    "name": "Buenos Aires",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["50", "164", "223"]
+  },
+  "18": {
+    "lat": 40.1666666667,
+    "lon": 44.5,
+    "name": "Yerevan",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["83"]
+  },
+  "19": {
+    "lat": 12.5166666667,
+    "lon": -70.03333,
+    "name": "Oranjestad",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["63"]
+  },
+  "20": {
+    "lat": -35.2666666667,
+    "lon": 149.13333,
+    "name": "Canberra",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["156"]
+  },
+  "21": {
+    "lat": 48.0,
+    "lon": 16.36666,
+    "name": "Vienna",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["65", "191"]
+  },
+  "22": {
+    "lat": 40.3833333333,
+    "lon": 49.86666,
+    "name": "Baku",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["83", "102"]
+  },
+  "23": {
+    "lat": 25.0833333333,
+    "lon": -77.35,
+    "name": "Nassau",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["216", "222", "62"]
+  },
+  "24": {
+    "lat": 26.2333333333,
+    "lon": 50.56666,
+    "name": "Manama",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["184", "171", "118"]
+  },
+  "25": {
+    "lat": 23.7166666667,
+    "lon": 90.4,
+    "name": "Dhaka",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["32", "41"]
+  },
+  "26": {
+    "lat": 13.0,
+    "lon": -59.61666,
+    "name": "Bridgetown",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["180"]
+  },
+  "27": {
+    "lat": 53.0,
+    "lon": 27.56666,
+    "name": "Minsk",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["219", "126"]
+  },
+  "28": {
+    "lat": 50.8333333333,
+    "lon": 4.33333,
+    "name": "Brussels",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["79", "149", "127"]
+  },
+  "29": {
+    "lat": 17.2,
+    "lon": -88.76666,
+    "name": "Belmopan",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["91", "47"]
+  },
+  "30": {
+    "lat": 6.48333333333,
+    "lon": 2.61666,
+    "name": "Porto-Novo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["154", "210"]
+  },
+  "31": {
+    "lat": 32.2833333333,
+    "lon": -64.78333,
+    "name": "Hamilton",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["216", "179"]
+  },
+  "32": {
+    "lat": 27.4666666667,
+    "lon": 89.63333,
+    "name": "Thimphu",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["25", "148"]
+  },
+  "33": {
+    "lat": -16.0,
+    "lon": -68.15,
+    "name": "La Paz",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["164", "165"]
+  },
+  "34": {
+    "lat": 43.8666666667,
+    "lon": 18.41666,
+    "name": "Sarajevo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["61", "143"]
+  },
+  "35": {
+    "lat": -24.6333333333,
+    "lon": 25.9,
+    "name": "Gaborone",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["195", "147"]
+  },
+  "36": {
+    "lat": -15.7833333333,
+    "lon": -47.91666,
+    "name": "Brasilia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["164"]
+  },
+  "37": {
+    "lat": 18.4166666667,
+    "lon": -64.61666,
+    "name": "Road Town",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["228", "6"]
+  },
+  "38": {
+    "lat": 4.88333333333,
+    "lon": 114.93333,
+    "name": "Bandar Seri Begawan",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["209", "189", "166"]
+  },
+  "39": {
+    "lat": 42.6833333333,
+    "lon": 23.31666,
+    "name": "Sofia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["172", "117", "87"]
+  },
+  "40": {
+    "lat": 12.3666666667,
+    "lon": -1.51666,
+    "name": "Ouagadougou",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["153", "133"]
+  },
+  "41": {
+    "lat": 16.0,
+    "lon": 96.15,
+    "name": "Rangoon",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["208", "25"]
+  },
+  "42": {
+    "lat": -3.36666666667,
+    "lon": 29.35,
+    "name": "Bujumbura",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["174"]
+  },
+  "43": {
+    "lat": 11.5,
+    "lon": 104.91666,
+    "name": "Phnom Penh",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["208", "131"]
+  },
+  "44": {
+    "lat": 3.86666666667,
+    "lon": 11.51666,
+    "name": "Yaounde",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["48", "71"]
+  },
+  "45": {
+    "lat": 45.4166666667,
+    "lon": -75.7,
+    "name": "Ottawa",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["222"]
+  },
+  "46": {
+    "lat": 14.9166666667,
+    "lon": -23.51666,
+    "name": "Praia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["185"]
+  },
+  "47": {
+    "lat": 19.0,
+    "lon": -81.38333,
+    "name": "George Town",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["29", "62"]
+  },
+  "48": {
+    "lat": 4.36666666667,
+    "lon": 18.58333,
+    "name": "Bangui",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["128", "44"]
+  },
+  "49": {
+    "lat": 12.0,
+    "lon": 15.03333,
+    "name": "N'Djamena",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["154"]
+  },
+  "50": {
+    "lat": -33.4,
+    "lon": -70.66666,
+    "name": "Santiago",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["17"]
+  },
+  "51": {
+    "lat": 39.9166666667,
+    "lon": 116.38333,
+    "name": "Beijing",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["115", "142"]
+  },
+  "52": {
+    "lat": -10.4166666667,
+    "lon": 105.71666,
+    "name": "The Settlement",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["101", "53"]
+  },
+  "53": {
+    "lat": -12.1666666667,
+    "lon": 96.83333,
+    "name": "West Island",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["52"]
+  },
+  "54": {
+    "lat": 4.0,
+    "lon": -74.08333,
+    "name": "Bogota",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["162", "108"]
+  },
+  "55": {
+    "lat": -11.0,
+    "lon": 43.23333,
+    "name": "Moroni",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["129", "207"]
+  },
+  "56": {
+    "lat": -4.31666666667,
+    "lon": 15.3,
+    "name": "Kinshasa",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["57", "14"]
+  },
+  "57": {
+    "lat": -4.2,
+    "lon": 15.28333,
+    "name": "Brazzaville",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["56", "81"]
+  },
+  "58": {
+    "lat": -21.0,
+    "lon": -159.76666,
+    "name": "Avarua",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["80", "155"]
+  },
+  "59": {
+    "lat": 9.93333333333,
+    "lon": -84.08333,
+    "name": "San Jose",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["152", "162"]
+  },
+  "60": {
+    "lat": 6.81666666667,
+    "lon": -5.26666,
+    "name": "Yamoussoukro",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["76", "85", "133"]
+  },
+  "61": {
+    "lat": 45.0,
+    "lon": 16.0,
+    "name": "Zagreb",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["192", "34"]
+  },
+  "62": {
+    "lat": 23.1166666667,
+    "lon": -82.35,
+    "name": "Havana",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["47", "23"]
+  },
+  "63": {
+    "lat": 12.0,
+    "lon": -68.91666,
+    "name": "Willemstad",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["226", "19"]
+  },
+  "64": {
+    "lat": 35.1666666667,
+    "lon": 33.36666,
+    "name": "Nicosia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["233", "122"]
+  },
+  "65": {
+    "lat": 50.0833333333,
+    "lon": 14.46666,
+    "name": "Prague",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["84", "21"]
+  },
+  "66": {
+    "lat": 55.6666666667,
+    "lon": 12.58333,
+    "name": "Copenhagen",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["84", "158"]
+  },
+  "67": {
+    "lat": 11.5833333333,
+    "lon": 43.15,
+    "name": "Djibouti",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["0", "74", "230"]
+  },
+  "68": {
+    "lat": 15.0,
+    "lon": -61.4,
+    "name": "Roseau",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["144", "180"]
+  },
+  "69": {
+    "lat": 18.4666666667,
+    "lon": -69.9,
+    "name": "Santo Domingo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["96", "170"]
+  },
+  "70": {
+    "lat": 30.0,
+    "lon": 31.25,
+    "name": "Cairo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["106"]
+  },
+  "71": {
+    "lat": 3.7,
+    "lon": 8.78333,
+    "name": "Malabo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["81", "154", "44"]
+  },
+  "72": {
+    "lat": 15.3333333333,
+    "lon": 38.93333,
+    "name": "Asmara",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["230", "199"]
+  },
+  "73": {
+    "lat": 59.4333333333,
+    "lon": 24.71666,
+    "name": "Tallinn",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["121", "4", "78"]
+  },
+  "74": {
+    "lat": 9.03333333333,
+    "lon": 38.7,
+    "name": "Addis Ababa",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["67", "196"]
+  },
+  "75": {
+    "lat": -51.0,
+    "lon": -57.85,
+    "name": "Stanley",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["1", "223"]
+  },
+  "76": {
+    "lat": 6.0,
+    "lon": -6.76666,
+    "name": "Torshavn",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["124", "60"]
+  },
+  "77": {
+    "lat": -18.1333333333,
+    "lon": 178.41666,
+    "name": "Suva",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["225", "217"]
+  },
+  "78": {
+    "lat": 60.1666666667,
+    "lon": 24.93333,
+    "name": "Helsinki",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["73"]
+  },
+  "79": {
+    "lat": 48.8666666667,
+    "lon": 2.33333,
+    "name": "Paris",
+    "treasure": 0,
+    "owner": "Michel",
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["28", "221"]
+  },
+  "80": {
+    "lat": -17.5333333333,
+    "lon": -149.56666,
+    "name": "Papeete",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["58", "167"]
+  },
+  "81": {
+    "lat": 0.383333333333,
+    "lon": 9.45,
+    "name": "Libreville",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["57", "183", "71"]
+  },
+  "82": {
+    "lat": 13.4,
+    "lon": -16.56666,
+    "name": "Banjul",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["185", "94"]
+  },
+  "83": {
+    "lat": 41.6833333333,
+    "lon": 44.83333,
+    "name": "Tbilisi",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["18", "22"]
+  },
+  "84": {
+    "lat": 52.5166666667,
+    "lon": 13.4,
+    "name": "Berlin",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["65", "66"]
+  },
+  "85": {
+    "lat": 5.5,
+    "lon": -0.21666,
+    "name": "Accra",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["210", "60"]
+  },
+  "86": {
+    "lat": 36.1333333333,
+    "lon": -5.35,
+    "name": "Gibraltar",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["145", "197", "169"]
+  },
+  "87": {
+    "lat": 37.9833333333,
+    "lon": 23.73333,
+    "name": "Athens",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["39"]
+  },
+  "88": {
+    "lat": 64.1833333333,
+    "lon": -51.75,
+    "name": "Nuuk",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["99", "179"]
+  },
+  "89": {
+    "lat": 12.0,
+    "lon": -61.75,
+    "name": "Saint George's",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["212", "226", "180"]
+  },
+  "90": {
+    "lat": 13.4666666667,
+    "lon": 144.73333,
+    "name": "Hagatna",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["161", "157"]
+  },
+  "91": {
+    "lat": 14.6166666667,
+    "lon": -90.51666,
+    "name": "Guatemala City",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["152", "138", "29"]
+  },
+  "92": {
+    "lat": 49.4,
+    "lon": -2.53333,
+    "name": "Saint Peter Port",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["105", "110"]
+  },
+  "93": {
+    "lat": 9.0,
+    "lon": -13.7,
+    "name": "Conakry",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["188", "94"]
+  },
+  "94": {
+    "lat": 11.8,
+    "lon": -15.58333,
+    "name": "Bissau",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["82", "93"]
+  },
+  "95": {
+    "lat": 6.0,
+    "lon": -58.15,
+    "name": "Georgetown",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["200", "178", "212"]
+  },
+  "96": {
+    "lat": 18.5333333333,
+    "lon": -72.33333,
+    "name": "Port-au-Prince",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["216", "69"]
+  },
+  "97": {
+    "lat": 41.0,
+    "lon": 12.45,
+    "name": "Vatican City",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["107", "213", "182"]
+  },
+  "98": {
+    "lat": 47.0,
+    "lon": 19.08333,
+    "name": "Budapest",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["168", "186", "191"]
+  },
+  "99": {
+    "lat": 64.1,
+    "lon": -21.95,
+    "name": "Reykjavik",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["104", "88"]
+  },
+  "100": {
+    "lat": 28.0,
+    "lon": 77.2,
+    "name": "New Delhi",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["160", "148"]
+  },
+  "101": {
+    "lat": -6.16666666667,
+    "lon": 106.81666,
+    "name": "Jakarta",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["52", "189"]
+  },
+  "102": {
+    "lat": 35.0,
+    "lon": 51.41666,
+    "name": "Tehran",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["22", "118", "215"]
+  },
+  "103": {
+    "lat": 33.3333333333,
+    "lon": 44.4,
+    "name": "Baghdad",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["204", "118"]
+  },
+  "104": {
+    "lat": 53.3166666667,
+    "lon": -6.23333,
+    "name": "Dublin",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["105", "99"]
+  },
+  "105": {
+    "lat": 54.1,
+    "lon": -4.48333,
+    "name": "Douglas",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["104", "92"]
+  },
+  "106": {
+    "lat": 31.7666666667,
+    "lon": 35.23333,
+    "name": "Jerusalem",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["3", "70", "111"]
+  },
+  "107": {
+    "lat": 41.0,
+    "lon": 12.48333,
+    "name": "Rome",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["97"]
+  },
+  "108": {
+    "lat": 1.0,
+    "lon": -76.8,
+    "name": "Kingston",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["165", "54"]
+  },
+  "109": {
+    "lat": 35.6833333333,
+    "lon": 139.75,
+    "name": "Tokyo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["116"]
+  },
+  "110": {
+    "lat": 49.1833333333,
+    "lon": -2.1,
+    "name": "Saint Helier",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["92", "221"]
+  },
+  "111": {
+    "lat": 31.9,
+    "lon": 35.93333,
+    "name": "Amman",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["106", "204"]
+  },
+  "112": {
+    "lat": 51.1666666667,
+    "lon": 71.41666,
+    "name": "Astana",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["119"]
+  },
+  "113": {
+    "lat": -1.28333333333,
+    "lon": 36.81666,
+    "name": "Nairobi",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["218", "207"]
+  },
+  "114": {
+    "lat": -0.883333333333,
+    "lon": 169.53333,
+    "name": "Tarawa",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["5", "135"]
+  },
+  "115": {
+    "lat": 39.0166666667,
+    "lon": 125.75,
+    "name": "Pyongyang",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["51", "116"]
+  },
+  "116": {
+    "lat": 37.5,
+    "lon": 126.98333,
+    "name": "Seoul",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["115", "205", "109"]
+  },
+  "117": {
+    "lat": 42.6666666667,
+    "lon": 21.16666,
+    "name": "Pristina",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["10", "186", "39"]
+  },
+  "118": {
+    "lat": 29.3666666667,
+    "lon": 47.96666,
+    "name": "Kuwait City",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["24", "102", "103"]
+  },
+  "119": {
+    "lat": 42.8666666667,
+    "lon": 74.6,
+    "name": "Bishkek",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["224", "112"]
+  },
+  "120": {
+    "lat": 17.9666666667,
+    "lon": 102.6,
+    "name": "Vientiane",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["208", "227"]
+  },
+  "121": {
+    "lat": 56.9,
+    "lon": 24.1,
+    "name": "Riga",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["73", "126"]
+  },
+  "122": {
+    "lat": 33.8666666667,
+    "lon": 35.5,
+    "name": "Beirut",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["64", "204"]
+  },
+  "123": {
+    "lat": -29.3166666667,
+    "lon": 27.48333,
+    "name": "Maseru",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["195"]
+  },
+  "124": {
+    "lat": 6.0,
+    "lon": -10.8,
+    "name": "Monrovia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["188", "76"]
+  },
+  "125": {
+    "lat": 32.8833333333,
+    "lon": 13.16666,
+    "name": "Tripoli",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["213", "134"]
+  },
+  "126": {
+    "lat": 54.6833333333,
+    "lon": 25.31666,
+    "name": "Vilnius",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["168", "121", "27"]
+  },
+  "127": {
+    "lat": 49.0,
+    "lon": 6.11666,
+    "name": "Luxembourg",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["203", "28"]
+  },
+  "128": {
+    "lat": 4.0,
+    "lon": 21.43333,
+    "name": "Skopje",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["48", "140"]
+  },
+  "129": {
+    "lat": -18.9166666667,
+    "lon": 47.51666,
+    "name": "Antananarivo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["137", "55"]
+  },
+  "130": {
+    "lat": -13.9666666667,
+    "lon": 33.78333,
+    "name": "Lilongwe",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["232", "207"]
+  },
+  "131": {
+    "lat": 3.16666666667,
+    "lon": 101.7,
+    "name": "Kuala Lumpur",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["43", "189"]
+  },
+  "132": {
+    "lat": 4.16666666667,
+    "lon": 73.5,
+    "name": "Male",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["234", "198"]
+  },
+  "133": {
+    "lat": 12.6,
+    "lon": -8.0,
+    "name": "Bamako",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["40", "60"]
+  },
+  "134": {
+    "lat": 35.8833333333,
+    "lon": 14.5,
+    "name": "Valletta",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["125"]
+  },
+  "135": {
+    "lat": 7.0,
+    "lon": 171.38333,
+    "name": "Majuro",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["114"]
+  },
+  "136": {
+    "lat": 18.0666666667,
+    "lon": -15.96666,
+    "name": "Nouakchott",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["8", "185"]
+  },
+  "137": {
+    "lat": -20.1,
+    "lon": 57.48333,
+    "name": "Port Louis",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["129", "2"]
+  },
+  "138": {
+    "lat": 19.4333333333,
+    "lon": -99.13333,
+    "name": "Mexico City",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["91", "167"]
+  },
+  "139": {
+    "lat": 6.91666666667,
+    "lon": 158.15,
+    "name": "Palikir",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["157", "5"]
+  },
+  "140": {
+    "lat": 4.0,
+    "lon": 28.85,
+    "name": "Chisinau",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["128", "196"]
+  },
+  "141": {
+    "lat": 43.7333333333,
+    "lon": 7.41666,
+    "name": "Monaco",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["203", "13", "182"]
+  },
+  "142": {
+    "lat": 47.9166666667,
+    "lon": 106.91666,
+    "name": "Ulaanbaatar",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["51"]
+  },
+  "143": {
+    "lat": 42.4333333333,
+    "lon": 19.26666,
+    "name": "Podgorica",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["34", "10"]
+  },
+  "144": {
+    "lat": 16.0,
+    "lon": -62.21666,
+    "name": "Plymouth",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["177", "68"]
+  },
+  "145": {
+    "lat": 34.0166666667,
+    "lon": -6.81666,
+    "name": "Rabat",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["8", "86"]
+  },
+  "146": {
+    "lat": -25.9,
+    "lon": 32.58333,
+    "name": "Maputo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["202"]
+  },
+  "147": {
+    "lat": -22.5666666667,
+    "lon": 17.08333,
+    "name": "Windhoek",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["35"]
+  },
+  "148": {
+    "lat": 27.7166666667,
+    "lon": 85.31666,
+    "name": "Kathmandu",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["32", "100"]
+  },
+  "149": {
+    "lat": 52.3,
+    "lon": 4.91666,
+    "name": "Amsterdam",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["28"]
+  },
+  "150": {
+    "lat": -22.2666666667,
+    "lon": 166.45,
+    "name": "Noumea",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["225", "156"]
+  },
+  "151": {
+    "lat": -41.0,
+    "lon": 174.78333,
+    "name": "Wellington",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["156"]
+  },
+  "152": {
+    "lat": 12.1333333333,
+    "lon": -86.25,
+    "name": "Managua",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["59", "91"]
+  },
+  "153": {
+    "lat": 13.5166666667,
+    "lon": 2.11666,
+    "name": "Niamey",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["40"]
+  },
+  "154": {
+    "lat": 9.08333333333,
+    "lon": 7.53333,
+    "name": "Abuja",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["49", "30", "71"]
+  },
+  "155": {
+    "lat": -19.0166666667,
+    "lon": -169.91666,
+    "name": "Alofi",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["58", "211", "12"]
+  },
+  "156": {
+    "lat": -29.0,
+    "lon": 167.96666,
+    "name": "Kingston",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["20", "150", "151"]
+  },
+  "157": {
+    "lat": 15.0,
+    "lon": 145.75,
+    "name": "Saipan",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["90", "139"]
+  },
+  "158": {
+    "lat": 59.9166666667,
+    "lon": 10.75,
+    "name": "Oslo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["66"]
+  },
+  "159": {
+    "lat": 23.6166666667,
+    "lon": 58.58333,
+    "name": "Muscat",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["220"]
+  },
+  "160": {
+    "lat": 33.6833333333,
+    "lon": 73.05,
+    "name": "Islamabad",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["9", "100"]
+  },
+  "161": {
+    "lat": 7.48333333333,
+    "lon": 134.63333,
+    "name": "Melekeok",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["90", "166"]
+  },
+  "162": {
+    "lat": 8.96666666667,
+    "lon": -79.53333,
+    "name": "Panama City",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["59", "54"]
+  },
+  "163": {
+    "lat": -9.4,
+    "lon": 147.18333,
+    "name": "Port Moresby",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["193"]
+  },
+  "164": {
+    "lat": -25.2666666667,
+    "lon": -57.66666,
+    "name": "Asuncion",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["33", "36", "17"]
+  },
+  "165": {
+    "lat": -12.0,
+    "lon": -77.05,
+    "name": "Lima",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["33", "108"]
+  },
+  "166": {
+    "lat": 14.0,
+    "lon": 120.96666,
+    "name": "Manila",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["161", "205", "38"]
+  },
+  "167": {
+    "lat": -25.0666666667,
+    "lon": -130.08333,
+    "name": "Adamstown",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["80", "138"]
+  },
+  "168": {
+    "lat": 52.2,
+    "lon": 21.0,
+    "name": "Warsaw",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["98", "126"]
+  },
+  "169": {
+    "lat": 38.7166666667,
+    "lon": -9.13333,
+    "name": "Lisbon",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["86"]
+  },
+  "170": {
+    "lat": 18.4666666667,
+    "lon": -66.11666,
+    "name": "San Juan",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["228", "69"]
+  },
+  "171": {
+    "lat": 25.2833333333,
+    "lon": 51.53333,
+    "name": "Doha",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["24", "220"]
+  },
+  "172": {
+    "lat": 44.4333333333,
+    "lon": 26.1,
+    "name": "Bucharest",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["214", "39"]
+  },
+  "173": {
+    "lat": 55.7,
+    "lon": 37.6,
+    "name": "Moscow",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["219"]
+  },
+  "174": {
+    "lat": -1.9,
+    "lon": 30.05,
+    "name": "Kigali",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["218", "42"]
+  },
+  "175": {
+    "lat": 17.8833333333,
+    "lon": -62.85,
+    "name": "Gustavia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["177", "190"]
+  },
+  "176": {
+    "lat": -15.9333333333,
+    "lon": -5.71666,
+    "name": "Jamestown",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["14"]
+  },
+  "177": {
+    "lat": 17.0,
+    "lon": -62.71666,
+    "name": "Basseterre",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["16", "144", "175"]
+  },
+  "178": {
+    "lat": 1.0,
+    "lon": -61.0,
+    "name": "Castries",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["95"]
+  },
+  "179": {
+    "lat": 46.7666666667,
+    "lon": -56.18333,
+    "name": "Saint-Pierre",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["88", "31"]
+  },
+  "180": {
+    "lat": 13.1333333333,
+    "lon": -61.21666,
+    "name": "Kingstown",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["89", "26", "68"]
+  },
+  "181": {
+    "lat": -13.8166666667,
+    "lon": -171.76666,
+    "name": "Apia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["12", "229", "7"]
+  },
+  "182": {
+    "lat": 43.9333333333,
+    "lon": 12.41666,
+    "name": "San Marino",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["192", "97", "141"]
+  },
+  "183": {
+    "lat": 0.333333333333,
+    "lon": 6.73333,
+    "name": "Sao Tome",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["81"]
+  },
+  "184": {
+    "lat": 24.6,
+    "lon": 46.7,
+    "name": "Riyadh",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["24"]
+  },
+  "185": {
+    "lat": 14.7333333333,
+    "lon": -17.63333,
+    "name": "Dakar",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["136", "82", "46"]
+  },
+  "186": {
+    "lat": 44.8333333333,
+    "lon": 20.5,
+    "name": "Belgrade",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["98", "117"]
+  },
+  "187": {
+    "lat": -4.61666666667,
+    "lon": 55.45,
+    "name": "Victoria",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["194", "234"]
+  },
+  "188": {
+    "lat": 8.48333333333,
+    "lon": -13.23333,
+    "name": "Freetown",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["124", "93"]
+  },
+  "189": {
+    "lat": 1.28333333333,
+    "lon": 103.85,
+    "name": "Singapore",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["131", "101", "38"]
+  },
+  "190": {
+    "lat": 18.0166666667,
+    "lon": -63.03333,
+    "name": "Philipsburg",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["6", "175"]
+  },
+  "191": {
+    "lat": 48.1,
+    "lon": 17.11666,
+    "name": "Bratislava",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["98", "21"]
+  },
+  "192": {
+    "lat": 46.0,
+    "lon": 14.51666,
+    "name": "Ljubljana",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["61", "182"]
+  },
+  "193": {
+    "lat": -9.43333333333,
+    "lon": 159.95,
+    "name": "Honiara",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["225", "163", "5"]
+  },
+  "194": {
+    "lat": 2.06666666667,
+    "lon": 45.33333,
+    "name": "Mogadishu",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["0", "187"]
+  },
+  "195": {
+    "lat": -25.0,
+    "lon": 28.21666,
+    "name": "Pretoria",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["232", "123", "202", "35"]
+  },
+  "196": {
+    "lat": 4.8,
+    "lon": 31.61666,
+    "name": "Juba",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["74", "140", "218"]
+  },
+  "197": {
+    "lat": 40.0,
+    "lon": -3.68333,
+    "name": "Madrid",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["13", "86"]
+  },
+  "198": {
+    "lat": 6.91666666667,
+    "lon": 79.83333,
+    "name": "Colombo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["132"]
+  },
+  "199": {
+    "lat": 15.0,
+    "lon": 32.53333,
+    "name": "Khartoum",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["72"]
+  },
+  "200": {
+    "lat": 5.83333333333,
+    "lon": -55.16666,
+    "name": "Paramaribo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["95"]
+  },
+  "201": {
+    "lat": 78.2166666667,
+    "lon": 15.63333,
+    "name": "Longyearbyen",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["4"]
+  },
+  "202": {
+    "lat": -26.3166666667,
+    "lon": 31.13333,
+    "name": "Mbabane",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["146", "195"]
+  },
+  "203": {
+    "lat": 46.9166666667,
+    "lon": 7.46666,
+    "name": "Bern",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["141", "127"]
+  },
+  "204": {
+    "lat": 33.0,
+    "lon": 36.3,
+    "name": "Damascus",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["122", "103", "111"]
+  },
+  "205": {
+    "lat": 25.0333333333,
+    "lon": 121.51666,
+    "name": "Taipei",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["116", "166"]
+  },
+  "206": {
+    "lat": 38.5,
+    "lon": 68.76666,
+    "name": "Dushanbe",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["224", "9", "215"]
+  },
+  "207": {
+    "lat": -6.0,
+    "lon": 39.28333,
+    "name": "Dar es Salaam",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["113", "130", "55"]
+  },
+  "208": {
+    "lat": 13.7,
+    "lon": 100.51666,
+    "name": "Bangkok",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["120", "41", "43"]
+  },
+  "209": {
+    "lat": -8.58333333333,
+    "lon": 125.6,
+    "name": "Dili",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["38"]
+  },
+  "210": {
+    "lat": 6.11666666667,
+    "lon": 1.21666,
+    "name": "Lome",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["85", "30"]
+  },
+  "211": {
+    "lat": -21.1333333333,
+    "lon": -175.2,
+    "name": "Nuku'alofa",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["155"]
+  },
+  "212": {
+    "lat": 10.6,
+    "lon": -61.51666,
+    "name": "Port of Spain",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["89", "95"]
+  },
+  "213": {
+    "lat": 36.0,
+    "lon": 10.18333,
+    "name": "Tunis",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["97", "125"]
+  },
+  "214": {
+    "lat": 39.9333333333,
+    "lon": 32.86666,
+    "name": "Ankara",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["233", "172"]
+  },
+  "215": {
+    "lat": 37.9,
+    "lon": 58.38333,
+    "name": "Ashgabat",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["206", "102"]
+  },
+  "216": {
+    "lat": 21.4666666667,
+    "lon": -71.13333,
+    "name": "Grand Turk",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["96", "23", "31"]
+  },
+  "217": {
+    "lat": -8.51666666667,
+    "lon": 179.21666,
+    "name": "Funafuti",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["77"]
+  },
+  "218": {
+    "lat": 0.316666666667,
+    "lon": 32.55,
+    "name": "Kampala",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["113", "196", "174"]
+  },
+  "219": {
+    "lat": 50.4333333333,
+    "lon": 30.51666,
+    "name": "Kyiv",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["27", "173"]
+  },
+  "220": {
+    "lat": 24.4666666667,
+    "lon": 54.36666,
+    "name": "Abu Dhabi",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["171", "159"]
+  },
+  "221": {
+    "lat": 51.0,
+    "lon": -0.08333,
+    "name": "London",
+    "treasure": 0,
+    "owner": "John",
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["110", "79"]
+  },
+  "222": {
+    "lat": 38.88333,
+    "lon": -77.0,
+    "name": "Washington D.C.",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["45", "23"]
+  },
+  "223": {
+    "lat": -34.8,
+    "lon": -56.16666,
+    "name": "Montevideo",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["17", "75"]
+  },
+  "224": {
+    "lat": 41.3166666667,
+    "lon": 69.25,
+    "name": "Tashkent",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["206", "119"]
+  },
+  "225": {
+    "lat": -17.7333333333,
+    "lon": 168.31666,
+    "name": "Port-Vila",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["193", "77", "150"]
+  },
+  "226": {
+    "lat": 10.4833333333,
+    "lon": -66.86666,
+    "name": "Caracas",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["89", "63"]
+  },
+  "227": {
+    "lat": 21.0333333333,
+    "lon": 105.85,
+    "name": "Hanoi",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 2,
+    "neighbors": ["120"]
+  },
+  "228": {
+    "lat": 18.3,
+    "lon": -64.93333,
+    "name": "Charlotte Amalie",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 0,
+    "neighbors": ["170", "37"]
+  },
+  "229": {
+    "lat": -13.9,
+    "lon": -171.93333,
+    "name": "Mata-Utu",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["181"]
+  },
+  "230": {
+    "lat": 15.3,
+    "lon": 44.2,
+    "name": "Sanaa",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["72", "67"]
+  },
+  "231": {
+    "lat": -15.4166666667,
+    "lon": 28.28333,
+    "name": "Lusaka",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 3,
+    "neighbors": ["232"]
+  },
+  "232": {
+    "lat": -17.8166666667,
+    "lon": 31.03333,
+    "name": "Harare",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 1,
+    "neighbors": ["130", "195", "231"]
+  },
+  "233": {
+    "lat": 35.18333,
+    "lon": 33.36666,
+    "name": "North Nicosia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["64", "214"]
+  },
+  "234": {
+    "lat": -7.0,
+    "lon": 72.4,
+    "name": "Diego Garcia",
+    "treasure": 0,
+    "owner": null,
+    "price": 500,
+    "layerIndex": 4,
+    "neighbors": ["187", "132"]
+  }
+}

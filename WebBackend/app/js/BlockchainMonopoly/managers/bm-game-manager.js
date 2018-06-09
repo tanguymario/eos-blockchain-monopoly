@@ -1,0 +1,234 @@
+var KonvaImages = require('../../utils/konva-images.js');
+var JSONsLoader = require('../../utils/jsons-loader.js');
+var BlockchainInterface = require('../backend/blockchain-interface.js');
+
+var BMPlayer = require('../data-classes/bm-player.js');
+
+var BMMapLayer = require('../layers/bm-map-layer.js');
+var BMGameLayers = require('../layers/bm-game-layers.js');
+var BMUILayer = require('../layers/bm-ui-layer.js');
+var BMUIActionsLayer = require('../layers/bm-ui-actions-layer.js');
+
+var TimeManager = require('./time-manager.js');
+
+class BMGameManager {
+  constructor(stage) {
+    this.stage = stage;
+    
+    this._konvaImages = new KonvaImages();
+    this._jsonsLoader = new JSONsLoader();
+    this._jsonsLoaders = [];
+
+    this.layers = {
+      map: null,
+      game: null,
+      ui: null,
+      uiActions: null
+    };
+
+    this.blockchainInterface = new BlockchainInterface();
+
+    this.player = null;
+
+    this.initialize();
+  }
+
+  initialize() {
+    this.player = new BMPlayer(this);
+
+    this.createLayers();
+    this.initializeLayers();
+    this.preload();
+  }
+
+  preload() {
+    // Call preload for every layer
+    this.layersArray.forEach(
+      (function(layer) {
+        layer.preload();
+      }).bind(this)
+    );
+
+    // Check for the end of loading and launch start
+    var checkPreloadFinished = 
+    (function() {
+      // Check for jsonsLoaders
+      var nbJSONsLoaders = this._jsonsLoaders.length;
+      for (var i = 0; i < nbJSONsLoaders; i++) {
+        if (!this._jsonsLoaders[i].isFinished) {
+          return;
+        }
+      }
+
+      // Check for everything else
+      if (!this._konvaImages.isFinished || 
+          !this._jsonsLoader.isFinished) {
+        return;  
+      }
+
+      this.start();
+    }).bind(this);
+    
+    // Load every necessary data
+    this._konvaImages.load(null, (function() { checkPreloadFinished(); }).bind(this));
+    
+    // Load the jsons loader
+    this._jsonsLoader.callbackSuccess = (function() { checkPreloadFinished(); }).bind(this);
+    this._jsonsLoader.load();
+    
+    // If there are multiple jsons loaders, we load them
+    this._jsonsLoaders.forEach(
+      (function(jsonsLoader) {
+        var originalCallbackSuccess = jsonsLoader.callbackSuccess;
+
+        jsonsLoader.callbackSuccess = (function(json) {
+          executeFunctionSafe(originalCallbackSuccess, json);
+          checkPreloadFinished();
+        }).bind(this);
+
+        jsonsLoader.load();
+      }).bind(this)
+    );
+
+    // Check if there is no resources to actually load
+    checkPreloadFinished();
+  }
+
+  start() {
+    // Call preload for every layer
+    this.layersArray.forEach(
+      (function(layer) {
+        layer.start();
+      }).bind(this)
+    );
+
+    this.stage.draw();
+
+    this.timeManager = new TimeManager();
+
+    console.log("no refresh");
+    return;
+
+    // Set refresh loop once loaded
+    setInterval(
+      (function(){
+        this.refresh();
+      }).bind(this), 15000
+    );
+    
+    // No loop
+    // this.startLoop();
+  }
+
+  update(currentTime) {
+    this.timeManager.update(currentTime);
+
+    this.layersArray.forEach(
+      (function(layer) {
+        layer.update(this.timeManager);
+      }).bind(this)
+    );
+
+    this.animationFrameRequestId = window.requestAnimationFrame(
+      (function(currentTime) {
+        this.update(currentTime);
+      }).bind(this)
+    );
+  }
+
+  createLayers() {
+    this.layers.map = new BMMapLayer(this.stage, this);
+    this.layers.game = new BMGameLayers(this.stage, this);
+    this.layers.ui = new BMUILayer(this.stage, this, this.player);
+    this.layers.uiActions = new BMUIActionsLayer(this.stage, this);
+    // We create the array for more performance.
+    // We consider from now that no layer is going to be created
+    // Else we will have to update it 
+    this._updateLayersArray();
+  }
+
+  _updateLayersArray() {
+    this.layersArray = this.getAllLayers();
+  }
+
+  initializeLayers() {
+    this.layersArray.forEach(
+      (function(layer) {
+        layer.initialize();
+      }).bind(this)
+    );
+  }
+
+  getGameLayers() {
+    return [
+      this.layers.map,
+      this.layers.game,
+    ];
+  }
+
+  getAllLayers() {
+    var layers = [];
+    Object.keys(this.layers).forEach( 
+      (function(keyLayer) {
+        layers.push(this.layers[keyLayer]);
+      }).bind(this)
+    );
+
+    return layers;
+  }
+
+  refresh() {
+    // TODO remove this plz
+    location.reload(); 
+    return;
+
+    var nbLayers = this.layersArray.length;
+    for (var i = 0; i < nbLayers; i++) {
+      var layer = this.layersArray[i];
+      console.log(layer);
+      layer.destroy();
+    }
+
+    this.initialize();
+  }
+
+  addImage(src, ...konvaNodes) { this._konvaImages.add(src, konvaNodes); }
+  addJSONLoader(jsonLoader) { this._jsonsLoader.add(jsonLoader); }
+  addJSONsLoader(jsonsLoader) { this._jsonsLoaders.push(jsonsLoader); }
+
+  buyCity(city) {
+    var price = BlockchainInterface(city.data.price);
+    this.blockchainInterface.buy(city.id, price, function() {
+      console.log("BUY");
+    });
+  }
+
+  moveToCity(city) {
+    console.log("MOVE");
+    console.log(city);
+    console.log(this.player); 
+  }
+
+  collectCityTreasure(city) {
+    console.log("COLLECT");
+    console.log(city);
+    console.log(this.player);  
+  }
+
+  startUpdateLoop() {
+    this.animationFrameRequestId = window.requestAnimationFrame(
+      (function(currentTime) {
+        this.update(currentTime);
+      }).bind(this)
+    );
+  }
+
+  stopUpdateLoop() {
+    if (this.animationFrameRequestId) {
+      window.cancelAnimationFrame(this.animationFrameRequestId);
+      this.animationFrameRequestId = null;
+    }
+  }
+}
+
+module.exports = BMGameManager;

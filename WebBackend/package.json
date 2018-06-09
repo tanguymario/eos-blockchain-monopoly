@@ -1,0 +1,27 @@
+{
+  "name": "blockchainmonopoly",
+  "version": "1.0.0",
+  "description": "Blockchain Monopoly (EOS hackathon)",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm run build && npm run serve",
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "serve": "http-server dist"
+  },
+  "author": "tanguymario, xing",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "browserify": "^16.2.2",
+    "eosjs": "^14.1.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.0",
+    "http-server": "^0.11.1",
+    "konva": "^2.1.3",
+    "store": "^2.0.12",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
