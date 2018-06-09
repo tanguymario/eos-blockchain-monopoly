@@ -66,14 +66,16 @@ class BMCity {
       case BMUIActionsLayer.actions().Buy:
         this.gameManager.buyCity(this);
         break;
-      case BMUIActionsLayer.actions().Move:
+      case BMUIActionsLayer.actions().MoveTo:
         this.gameManager.moveToCity(this); 
         break;
       case BMUIActionsLayer.actions().Collect:
         this.gameManager.collectCityTreasure(this);
         break;
       case BMUIActionsLayer.actions().Cancel:
+        break;
       default:
+        console.warn("[BMCity] Unknown action", action);
         break;
     }
   }

@@ -7,7 +7,7 @@ class BMUIActionsLayer extends BMLayer {
   static actions() { 
     return Object.freeze({
       "Buy": 1,
-      "Move": 2,
+      "MoveTo": 2,
       "Collect": 3,
       "Cancel": 4
     }); 
@@ -164,8 +164,8 @@ class BMUIActionsLayer extends BMLayer {
 
   ask(city, callbackAction) {
     this.labelCity.getText().setText(
-      city.data.name + "\n" + 
-      city.data.price);
+      "City: " + city.data.name + "\n" + 
+      "Price: " + city.data.price);
     this.labelCity.setOffset({x: this.labelCity.getWidth() / 2});
 
     // Check for buying
@@ -218,8 +218,6 @@ class BMUIActionsLayer extends BMLayer {
       this.buttonDescCollect.opacity(0.5);
     }
     
-
-
     this.enable();
     this.moveToTop();
     this.draw();
