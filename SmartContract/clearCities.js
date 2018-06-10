@@ -20,40 +20,77 @@ pubkey = "EOS7aAYuDjo5hZFGR5MA2ErL5WAcwjfbjhDGeHyHhPWhhnHKmyR8X";
 
 eos = Eos({ keyProvider, binaryen });
 
-eos.getTableRows({
-  json: true,
-  code: "monopoly",
-  scope: "monopoly",
-  table: "cities",
-}).then(result => {
-  console.log(result);
-
-  return eos.transaction({
-    actions: [
-      {
-        account: "monopoly",
-        name: "clearcities",
-        authorization: [
-          {
-            actor: "monopoly",
-            permission: "active"
-          }
-        ],
-        data: {
-          player: "monopoly"
+eos.transaction({
+  actions: [
+    {
+      account: "monopoly",
+      name: "clearcities",
+      authorization: [
+        {
+          actor: "monopoly",
+          permission: "active"
         }
+      ],
+      data: {
+        player: "monopoly"
       }
-    ]
-  })
-}).then(res => {
-  return eos.getTableRows({
-    json: true,
-    code: "monopoly",
-    scope: "monopoly",
-    table: "cities",
-  })
-}).then(res => {
-  console.log(res);
+    }
+  ]
 })
-.catch(err => console.log(err))
+
+eos.transaction({
+  actions: [
+    {
+      account: "monopoly",
+      name: "clearplayers",
+      authorization: [
+        {
+          actor: "monopoly",
+          permission: "active"
+        }
+      ],
+      data: {
+        player: "monopoly"
+      }
+    }
+  ]
+})
+
+
+
+// eos.getTableRows({
+//   json: true,
+//   code: "monopoly",
+//   scope: "monopoly",
+//   table: "cities",
+// }).then(result => {
+//   console.log(result);
+//   return eos.transaction({
+//     actions: [
+//       {
+//         account: "monopoly",
+//         name: "clearcities",
+//         authorization: [
+//           {
+//             actor: "monopoly",
+//             permission: "active"
+//           }
+//         ],
+//         data: {
+//           player: "monopoly"
+//         }
+//       }
+//     ]
+//   })
+// }).then(res => {
+//   return eos.getTableRows({
+//     json: true,
+//     code: "monopoly",
+//     scope: "monopoly",
+//     table: "cities",
+//   })
+// }).then(res => {
+//   console.log(res);
+// })
+// .catch(err => console.log(err))
 
