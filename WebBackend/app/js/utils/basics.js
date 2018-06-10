@@ -13,7 +13,16 @@ var getArgOrDefault = function getArgOrDefault(arg, def) {
   return exists(arg) ? arg : def; 
 }
 
+var getPromptString = function(msg, defaultValue) {
+  var inputString = undefined;
+  while (!exists(inputString) || inputString === "") {
+    inputString = prompt(msg, defaultValue);
+  }
+  return inputString;
+}
+
 module.exports.exists = exists;
 module.exports.isFunction = isFunction;
 module.exports.executeFunctionSafely = executeFunctionSafely;
 module.exports.getArgOrDefault = getArgOrDefault;
+module.exports.getPromptString = getPromptString;

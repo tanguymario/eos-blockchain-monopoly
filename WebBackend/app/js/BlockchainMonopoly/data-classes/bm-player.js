@@ -2,10 +2,11 @@ var store = require('store');
 var stringUtils = require('../../utils/string-utils.js');
 var basics = require('../../utils/basics.js');
 var exists = basics.exists;
+var getPromptString = basics.getPromptString;
 
 class BMPlayer {
 
-  static StoreStringID() { return "bm-player"; }
+  static StoreStringID() { return "bm-player-id"; }
 
   constructor (gameManager) {
     this.address = this._getAddress();
@@ -17,8 +18,8 @@ class BMPlayer {
 
   _getAddress() {
     var address = store.get(BMPlayer.StoreStringID);
-    while (stringUtils.isNullOrEmpty(address)) {
-      address = prompt("Please enter your account address", "");
+    if (!exists(address)) {
+      address = getPromptString("Please enter your user account name");
     }
     store.set(BMPlayer.StoreStringID, address); 
     return address;

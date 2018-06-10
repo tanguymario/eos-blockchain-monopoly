@@ -46,7 +46,7 @@ class BMUIActionsLayer extends BMLayer {
         text: "",
         fill: "white",
         align: "center",
-        fontSize: 56
+        fontSize: 42
       })
     );
     this.add(this.labelCity);
@@ -60,7 +60,7 @@ class BMUIActionsLayer extends BMLayer {
       x: this.buttonBuy.x(),
       y: this.buttonBuy.y() + 50 + 256 / 2,
       text: 'Buy',
-      fontSize: 56,
+      fontSize: 42,
       fill: "white",
       align: "center"
     });
@@ -76,7 +76,7 @@ class BMUIActionsLayer extends BMLayer {
       x: this.buttonMoveTo.x(),
       y: this.buttonMoveTo.y() + 50 + 256 / 2,
       text: 'Move To',
-      fontSize: 56,
+      fontSize: 42,
       fill: "white",
       align: "center"
     });
@@ -92,7 +92,7 @@ class BMUIActionsLayer extends BMLayer {
       x: this.buttonCollect.x(),
       y: this.buttonCollect.y() + 50 + 256 / 2,
       text: 'Collect Treasure',
-      fontSize: 56,
+      fontSize: 42,
       fill: "white",
       align: "center"
     });
@@ -166,7 +166,8 @@ class BMUIActionsLayer extends BMLayer {
   ask(city, callbackAction) {
     this.labelCity.getText().setText(
       "City: " + city.data.name + "\n" + 
-      "Price: " + city.data.price);
+      "Price: " + city.data.price + "\n" +
+      "Treasure: " + city.data.treasure);
     this.labelCity.setOffset({x: this.labelCity.getWidth() / 2});
 
     // Check for buying

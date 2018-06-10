@@ -14,7 +14,7 @@ class BMUIHelpLayer extends BMLayer {
       width: this.stage.width(),
       height: this.stage.height(),
       fill: 'black',
-      opacity: 0.925
+      opacity: 0.7
     });
     this.add(this.background);
 
