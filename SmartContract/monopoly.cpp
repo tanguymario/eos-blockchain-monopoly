@@ -60,6 +60,7 @@ void Monopoly::buy(const account_name player, const uint64_t cityId) {
 	if (playerItr->balance >= cityItr->price) {
 	  m_cityTable.modify(cityItr, _self, [&](auto& p) {
 	    p.owner = player;
+	    p.price *= 2;
 	  });
 
 	  m_playerTable.modify(playerItr, _self, [&](auto& p) {
@@ -96,12 +97,18 @@ void Monopoly::moveto(const account_name player, const uint64_t cityId) {
         eosio_assert( canMove, "Cannot move." ); 
       } 
       // deduct balance
-      uint64_t toll = cityItr->price * 0.01;
-      eosio_assert(playerItr->balance >= toll, "Not enough money.");
-      m_playerTable.modify(playerItr, _self, [&](auto& p) {
-        p.currentCityId = cityId;
-        p.balance -= toll;
-      });
+      if (cityItr->owner != _self) {
+	      uint64_t toll = cityItr->price * 0.01;
+	      eosio_assert(playerItr->balance >= toll, "Not enough money.");
+	      m_playerTable.modify(playerItr, _self, [&](auto& p) {
+	        p.currentCityId = cityId;
+	        p.balance -= toll;
+	      });
+  	  } else {
+  	  	  m_playerTable.modify(playerItr, _self, [&](auto& p) {
+	        p.currentCityId = cityId;
+	      });
+  	  }
     }
 }
 
