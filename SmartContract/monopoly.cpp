@@ -60,6 +60,7 @@ void Monopoly::buy(const account_name player, const uint64_t cityId) {
 	if (playerItr->balance >= cityItr->price) {
 	  m_cityTable.modify(cityItr, _self, [&](auto& p) {
 	    p.owner = player;
+	    p.price *= 2;
 	  });
 
 	  m_playerTable.modify(playerItr, _self, [&](auto& p) {
