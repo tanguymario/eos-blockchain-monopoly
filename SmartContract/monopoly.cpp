@@ -58,13 +58,13 @@ void Monopoly::buy(const account_name player, const uint64_t cityId) {
 	eosio_assert(playerItr->currentCityId == cityId, "Move to this city first.");
 
 	if (playerItr->balance >= cityItr->price) {
+    m_playerTable.modify(playerItr, _self, [&](auto& p) {
+      p.balance -= cityItr->price;
+    });
+    
 	  m_cityTable.modify(cityItr, _self, [&](auto& p) {
 	    p.owner = player;
 	    p.price *= 2;
-	  });
-
-	  m_playerTable.modify(playerItr, _self, [&](auto& p) {
-	    p.balance -= cityItr->price;
 	  });
 	}
 }  
@@ -124,7 +124,7 @@ void Monopoly::ptreasure(const account_name player, const uint64_t cityId) {
       m_playerTable.modify(playerItr, _self, [&](auto& p) {
         p.balance += cityItr->treasure;
       });
-      
+
       m_cityTable.modify(cityItr, _self, [&](auto& p) {
         p.treasure = 0;
       });
