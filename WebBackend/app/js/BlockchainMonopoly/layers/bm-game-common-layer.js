@@ -3,16 +3,16 @@ var BlockchainInterface = require('../backend/blockchain-interface.js');
 var konvaUtils = require('../../utils/konva-utils.js');
 
 class BMGameCommonLayer extends BMLayer {
-  constructor(stage, gameManager, index, options={}) {
+  constructor(stage, gameManager, options={}) {
     options.listening = false;
-    super(stage, gameManager, index, options);
+    super(stage, gameManager, options);
 
     this.moveToTop();
 
     this.tooltip = new Konva.Label({
       x: 0,
       y: 0,
-      opacity: 0.75,
+      opacity: 0.85,
       visible: false,
       listening: false
     });
@@ -26,6 +26,7 @@ class BMGameCommonLayer extends BMLayer {
         pointerHeight: 10,
         lineJoin: 'round',
         shadowColor: 'black',
+        cornerRadius: 10,
         shadowBlur: 10,
         shadowOffset: 10,
         shadowOpacity: 0.5,

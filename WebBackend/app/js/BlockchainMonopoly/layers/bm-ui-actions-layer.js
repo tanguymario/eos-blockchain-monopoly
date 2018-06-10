@@ -216,7 +216,7 @@ class BMUIActionsLayer extends BMLayer {
     
     // Check for treasure in current city
     if (this.gameManager.player.currentCity === city && 
-      ("" + city.data.treasure >= 0)) {
+        city.data.treasure > 0) {
       this.buttonCollect.listening(true);
       this.buttonCollect.opacity(1.0);
       this.buttonDescCollect.opacity(1.0);

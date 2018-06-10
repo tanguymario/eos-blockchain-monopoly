@@ -1,3 +1,5 @@
+var store = require('store');
+
 var KonvaImages = require('../../utils/konva-images.js');
 var JSONsLoader = require('../../utils/jsons-loader.js');
 var BlockchainInterface = require('../backend/blockchain-interface.js');
@@ -8,6 +10,7 @@ var BMMapLayer = require('../layers/bm-map-layer.js');
 var BMGameLayers = require('../layers/bm-game-layers.js');
 var BMUILayer = require('../layers/bm-ui-layer.js');
 var BMUIActionsLayer = require('../layers/bm-ui-actions-layer.js');
+var BMUIHelpLayer = require('../layers/bm-ui-help-layer.js');
 
 var TimeManager = require('./time-manager.js');
 
@@ -24,7 +27,8 @@ class BMGameManager {
       map: null,
       game: null,
       ui: null,
-      uiActions: null
+      uiActions: null,
+      uiHelp: null
     };
 
     this.blockchainInterface = new BlockchainInterface();
@@ -106,8 +110,6 @@ class BMGameManager {
       }).bind(this)
     );
 
-    this.stage.draw();
-
     this.timeManager = new TimeManager();
 
     this.eventsManager.initialize(this);
@@ -119,6 +121,8 @@ class BMGameManager {
       }).bind(this), this.refreshTime
     );
     
+    this.stage.draw();
+
     // No loop
     // this.startLoop();
   }
@@ -144,6 +148,7 @@ class BMGameManager {
     this.layers.game = new BMGameLayers(this.stage, this);
     this.layers.ui = new BMUILayer(this.stage, this, this.player);
     this.layers.uiActions = new BMUIActionsLayer(this.stage, this);
+    this.layers.uiHelp = new BMUIHelpLayer(this.stage, this);
     // We create the array for more performance.
     // We consider from now that no layer is going to be created
     // Else we will have to update it 
@@ -181,7 +186,7 @@ class BMGameManager {
   }
 
   refresh() {
-    this.layers.game.refresh();
+    // this.layers.game.refresh();
   }
 
   addImage(src, ...konvaNodes) { this._konvaImages.add(src, konvaNodes); }
@@ -198,6 +203,11 @@ class BMGameManager {
 
   collectCityTreasure(city) {
     this.blockchainInterface.collectTreasure(city, this.player); 
+  }
+
+  changeAccount() {
+    store.remove(BMPlayer.StoreStringID);
+    location.reload();
   }
 
   startUpdateLoop() {

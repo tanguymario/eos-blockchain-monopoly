@@ -21,7 +21,8 @@ class BMGameLayers extends BMMultipleLayers {
   }
 
   initialize() {
-    
+    this.commonLayer = new BMGameCommonLayer(this.stage, this.gameManager);
+    this.addLayer(this.commonLayer); 
   }
 
   preload() {
@@ -43,6 +44,18 @@ class BMGameLayers extends BMMultipleLayers {
 
   update() {
 
+  }
+
+  getGameLayers() {
+    var gameLayers = [];
+    this.layers.forEach(
+      (function(layer) {
+        if (layer instanceof BMGameLayer) {
+          gameLayers.push(layer);
+        }
+      }).bind(this)
+    );
+    return gameLayers;
   }
 
   refresh() {
@@ -88,8 +101,16 @@ class BMGameLayers extends BMMultipleLayers {
       this.mapCitiesDataJSONLoader.getData()
     );
 
-    // Clear everything
-    this.destroyLayers();
+    // Clear game layers and data associated
+    for (var i = 0; i < this.layers.length; i++) {
+      var layer = this.layers[i];
+      // Check out the number of nodes (are they the same between refreshes)?
+      if (layer instanceof BMGameLayer) {
+        layer.destroy();
+        this.layers.splice(i, 1);
+        i--;
+      }
+    }
     this.cities = {};
     this.connections = [];
 
@@ -99,10 +120,20 @@ class BMGameLayers extends BMMultipleLayers {
     // Initialize player with blockchain data
     this.gameManager.player.initialize(this.cities, this.blockchainPlayerDataJSONLoader.getData());
 
-    // TODO 
-    // this.scale(this.gameManager.eventsManager.scale);
+    // Reposition and rescale the layers 
+    this.scale({
+      x: this.gameManager.eventsManager.scale,
+      y: this.gameManager.eventsManager.scale
+    });
+    this.position(this.gameManager.eventsManager.pos);
 
-    console.log("REFRESH");
+    // Always move the common layer to the top
+    this.commonLayer.moveToTop();
+
+    // Move ui layers to the top
+    this.gameManager.layers.ui.moveToTop();
+    this.gameManager.layers.uiActions.moveToTop();
+    this.gameManager.layers.uiHelp.moveToTop();
 
     // Finally clear the loaders
     delete this.mapCitiesDataJSONLoader;
@@ -143,9 +174,6 @@ class BMGameLayers extends BMMultipleLayers {
     this.createCities(citiesJSON);
 
     this.createConnectionsBetweenCities();
-
-    // We scale to automatically enable / disable layers 
-    this.scale({x: 1.0, y: 1.0}); 
   }
 
   scale(scale) {
@@ -193,11 +221,8 @@ class BMGameLayers extends BMMultipleLayers {
 
     for (var i = nbGameLayers - 1; i >= 0; i--) {
       var layer = new BMGameLayer(this.stage, this.gameManager, i);
-      this.addLayer(layer);
+      this.layers.splice(0, 0, layer);
     }
-
-    this.commonLayer = new BMGameCommonLayer(this.stage, this.gameManager, nbGameLayers);
-    this.addLayer(this.commonLayer);
   }
 
   createCities(citiesJSON) {

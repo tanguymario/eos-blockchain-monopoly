@@ -1,4 +1,5 @@
 var basics = require('./basics.js');
+var exists = basics.exists;
 var executeFunctionSafely = basics.executeFunctionSafely;
 
 class KonvaImages {
@@ -14,8 +15,8 @@ class KonvaImages {
       konvaNodes = konvaNodes[0];
     }
 
-    if (!Array.isArray(this.data[imgSrc])) {
-      this.data[imgSrc] = { 
+    if (!exists(this.data[imgSrc])) {
+      this.data[imgSrc] = {
         konvaNodes: [],
         img: null
       };
