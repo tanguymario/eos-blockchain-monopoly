@@ -26,7 +26,7 @@ public:
   void moveto(const account_name player, const uint64_t cityId);
 
   // @abi action
-  void claimtreasure(const account_name player, const uint64_t cityId);
+  void ptreasure(const account_name player, const uint64_t cityId);
 
   // @abi action
   void clearcities(const account_name player);
@@ -66,4 +66,4 @@ private:
     PlayerTable m_playerTable;
 };
 
-EOSIO_ABI(Monopoly, (buy)(moveto)(claimtreasure)(addtreasure)(addcity)(clearcities)(clearplayers))
+EOSIO_ABI(Monopoly, (buy)(moveto)(ptreasure)(addtreasure)(addcity)(clearcities)(clearplayers))

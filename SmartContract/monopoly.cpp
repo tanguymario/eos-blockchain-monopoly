@@ -112,7 +112,7 @@ void Monopoly::moveto(const account_name player, const uint64_t cityId) {
     }
 }
 
-void Monopoly::claimtreasure(const account_name player, const uint64_t cityId) {
+void Monopoly::ptreasure(const account_name player, const uint64_t cityId) {
     require_auth(player);
     auto cityItr = m_cityTable.find( cityId );
     eosio_assert( cityItr != m_cityTable.end(), "City doesn't exist." );
