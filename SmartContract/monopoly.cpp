@@ -121,12 +121,12 @@ void Monopoly::ptreasure(const account_name player, const uint64_t cityId) {
     eosio_assert(playerItr != m_playerTable.end(), "Move to a city first.");
 
     if (cityItr->treasure > 0) {
-      m_cityTable.modify(cityItr, _self, [&](auto& p) {
-        p.treasure = 0;
-      });
-
       m_playerTable.modify(playerItr, _self, [&](auto& p) {
         p.balance += cityItr->treasure;
+      });
+      
+      m_cityTable.modify(cityItr, _self, [&](auto& p) {
+        p.treasure = 0;
       });
     }
 }
