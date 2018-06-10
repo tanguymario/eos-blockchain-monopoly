@@ -1,5 +1,7 @@
 var store = require('store');
 
+var konvaUtils = require('../../utils/konva-utils.js');
+
 var KonvaImages = require('../../utils/konva-images.js');
 var JSONsLoader = require('../../utils/jsons-loader.js');
 var BlockchainInterface = require('../backend/blockchain-interface.js');
@@ -115,11 +117,13 @@ class BMGameManager {
     this.eventsManager.initialize(this);
 
     // Set refresh loop once loaded
+    /*
     this.refreshIntervalId = setInterval(
       (function(){
         this.refresh();
       }).bind(this), this.refreshTime
     );
+    */
     
     this.stage.draw();
 
@@ -186,6 +190,8 @@ class BMGameManager {
   }
 
   refresh() {
+    location.reload();
+    console.log("refresh");
     // this.layers.game.refresh();
   }
 
@@ -194,15 +200,27 @@ class BMGameManager {
   addJSONsLoader(jsonsLoader) { this._jsonsLoaders.push(jsonsLoader); }
 
   buyCity(city) {
-    this.blockchainInterface.buyCity(city, this.player);
+    this.blockchainInterface.buyCity(city, this.player).then(n => {
+      this.refresh();
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   moveToCity(city) {
-    this.blockchainInterface.moveToCity(city, this.player); 
+    this.blockchainInterface.moveToCity(city, this.player).then(n => {
+      this.refresh();
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   collectCityTreasure(city) {
-    this.blockchainInterface.collectTreasure(city, this.player); 
+    this.blockchainInterface.collectTreasure(city, this.player).then(n => {
+      this.refresh();
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   changeAccount() {

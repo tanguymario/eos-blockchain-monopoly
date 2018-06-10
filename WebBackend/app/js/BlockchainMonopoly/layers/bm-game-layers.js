@@ -28,18 +28,47 @@ class BMGameLayers extends BMMultipleLayers {
   preload() {
     this.isRefreshing = true;
 
-    this.blockchainCitiesDataJSONLoader = new JSONLoader('assets/json/blockchainLocalTest.json', { keepData: true });
-    this.gameManager.addJSONLoader(this.blockchainCitiesDataJSONLoader);
+    this.gameManager.blockchainInterface.getCities().then(blockchainCitiesJSON => {
+      this.gameManager.blockchainInterface.getPlayer().then(blockchainPlayersJSON => {
+        new JSONLoader('assets/json/mapCitiesData.json', {
+          callbackSuccess: (function(mapCitiesJSON) {
+            new JSONLoader('assets/json/blockchainPlayer.json', {
+              callbackSuccess: (function(playerJSON) {
 
-    this.blockchainPlayerDataJSONLoader = new JSONLoader('assets/json/blockchainPlayer.json', { keepData: true });
-    this.gameManager.addJSONLoader(this.blockchainPlayerDataJSONLoader);
+                console.log(blockchainCitiesJSON);
+                console.log(blockchainPlayersJSON);
 
-    this.mapCitiesDataJSONLoader = new JSONLoader('assets/json/mapCitiesData.json', { keepData: true });
-    this.gameManager.addJSONLoader(this.mapCitiesDataJSONLoader);
+                blockchainPlayersJSON.forEach(
+                  (function(blockchainPlayer) {
+                    if (blockchainPlayer.account === playerJSON.account) {
+                      playerJSON.balance = blockchainPlayer.balance;
+                      playerJSON.currentCityId = blockchainPlayer.currentCityId.toString();
+                    }
+                  }).bind(this)
+                );                
+
+                this.onRefreshData(blockchainCitiesJSON, mapCitiesJSON, playerJSON);
+
+              }).bind(this)
+            }).load();
+          }).bind(this)
+        }
+      ).load();
+      });
+    });
+
+    // this.blockchainCitiesDataJSONLoader = new JSONLoader('assets/json/blockchainLocalTest.json', { keepData: true });
+    // this.gameManager.addJSONLoader(this.blockchainCitiesDataJSONLoader);
+
+    // this.blockchainPlayerDataJSONLoader = new JSONLoader('assets/json/blockchainPlayer.json', { keepData: true });
+    // this.gameManager.addJSONLoader(this.blockchainPlayerDataJSONLoader);
+
+    // this.mapCitiesDataJSONLoader = new JSONLoader('assets/json/mapCitiesData.json', { keepData: true });
+    // this.gameManager.addJSONLoader(this.mapCitiesDataJSONLoader);
   }
 
   start() {
-    this.onRefreshData();
+    // this.onRefreshData();
   }
 
   update() {
@@ -67,7 +96,7 @@ class BMGameLayers extends BMMultipleLayers {
     
     var jsonsLoader = new JSONsLoader();
     jsonsLoader.callbackSuccess = (function() {
-      this.onRefreshData();
+      // this.onRefreshData();
       this.draw();
     }).bind(this);
 
@@ -83,7 +112,8 @@ class BMGameLayers extends BMMultipleLayers {
     jsonsLoader.load();
   }
 
-  onRefreshData() {
+  onRefreshData(blockchainCitiesJSON, mapCitiesJSON, playerJSON) {
+    /*
     if (!exists(this.blockchainCitiesDataJSONLoader.getData())) {
       console.error("[BMGameLayers] Could not retrieve blockchain cities");
       return;
@@ -94,11 +124,23 @@ class BMGameLayers extends BMMultipleLayers {
       console.error("[BMGameLayers] Could not retrieve map cities");
       return;
     }
+    */
+
+    if (!exists(blockchainCitiesJSON)) {
+      console.error("[BMGameLayers] Could not retrieve blockchain cities");
+      return;
+    } else if (!exists(mapCitiesJSON)) {
+      console.error("[BMGameLayers] Could not retrieve blockchain player");
+      return;
+    } else if (!exists(playerJSON)) {
+      console.error("[BMGameLayers] Could not retrieve map cities");
+      return;
+    }
 
     // Concat blockchain with map data
-    var blockchainCitiesJSON = this.setupBlockchainData(
-      this.blockchainCitiesDataJSONLoader.getData(), 
-      this.mapCitiesDataJSONLoader.getData()
+    blockchainCitiesJSON = this.setupBlockchainData(
+      blockchainCitiesJSON, 
+      mapCitiesJSON
     );
 
     // Clear game layers and data associated
@@ -106,6 +148,7 @@ class BMGameLayers extends BMMultipleLayers {
       var layer = this.layers[i];
       // Check out the number of nodes (are they the same between refreshes)?
       if (layer instanceof BMGameLayer) {
+        layer.destroyChildren();
         layer.destroy();
         this.layers.splice(i, 1);
         i--;
@@ -118,7 +161,7 @@ class BMGameLayers extends BMMultipleLayers {
     this.initializeCities(blockchainCitiesJSON);
 
     // Initialize player with blockchain data
-    this.gameManager.player.initialize(this.cities, this.blockchainPlayerDataJSONLoader.getData());
+    this.gameManager.player.initialize(this.cities, playerJSON);
 
     // Reposition and rescale the layers 
     this.scale({
@@ -136,11 +179,20 @@ class BMGameLayers extends BMMultipleLayers {
     this.gameManager.layers.uiHelp.moveToTop();
 
     // Finally clear the loaders
-    delete this.mapCitiesDataJSONLoader;
+    /*
+    this.blockchainCitiesDataJSONLoader.clean();
+    delete this.blockchainCitiesDataJSONLoader;
+    this.blockchainPlayerDataJSONLoader.clean();
     delete this.blockchainPlayerDataJSONLoader;
+    this.mapCitiesDataJSONLoader.clean();
     delete this.mapCitiesDataJSONLoader;
+    */
 
     this.isRefreshing = false;
+    
+    this.gameManager.layers.ui.initPlayerInformation();
+
+    this.stage.draw();
   }
 
   setupBlockchainData(blockchainCitiesJSON, mapCitiesJSON) {

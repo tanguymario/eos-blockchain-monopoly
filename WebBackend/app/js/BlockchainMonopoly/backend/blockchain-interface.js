@@ -1,9 +1,9 @@
 var Eos = require('eosjs');
 var binaryen = require("binaryen");
 
-var keyProvider = "5J9UGDfqqjdKh5waZqp8cc1pUFBguvF4xtg5QNicCaRgugn9Ta8";
-var pubkey = "EOS7aAYuDjo5hZFGR5MA2ErL5WAcwjfbjhDGeHyHhPWhhnHKmyR8X";
-var accountName = "";
+var keyProvider = "5JqCiws4qarUV1uuCqRBcE1pjRqA6wfEaNFZZY1WXp1kQSjW5hw";
+var pubkey = "EOS7TWDZGrZ3RuvLb9QZ9wsZ7whBvVt9SjJgLTJoJy2LuosYKrYSX";
+var accountName = "playera";
 
 var eos = Eos({ keyProvider, binaryen });
 
@@ -41,6 +41,8 @@ class BlockchainInterface {
   }
 
   buyCity(city, player) { // NOTICE: player argument needed?
+    var cityId = parseInt(city.id);
+
     return new Promise((resolve, reject) => {
       eos.transaction({
         actions: [
@@ -55,7 +57,7 @@ class BlockchainInterface {
             ],
             data: {
               player: accountName,
-              cityId: city
+              cityId: cityId
             }
           }
         ]
@@ -65,6 +67,8 @@ class BlockchainInterface {
   }
 
   moveToCity(city, player) {
+    var cityId = parseInt(city.id);
+
     return new Promise((resolve, reject) => {
       eos.transaction({
         actions: [
@@ -79,7 +83,7 @@ class BlockchainInterface {
             ],
             data: {
               player: accountName,
-              cityId: city
+              cityId: cityId
             }
           }
         ]
@@ -89,6 +93,8 @@ class BlockchainInterface {
   }
 
   collectTreasure(city, player) {
+    var cityId = parseInt(city.id);
+
     return new Promise((resolve, reject) => {
       eos.transaction({
         actions: [
@@ -103,7 +109,7 @@ class BlockchainInterface {
             ],
             data: {
               player: accountName,
-              cityId: city
+              cityId: cityId
             }
           }
         ]

@@ -108,6 +108,12 @@ class BMUILayer extends BMLayer {
   }
 
   start() {
+    // We need to put ui layer at the top of the application
+    // Beacause game layers will be added asynchronously during preload()
+    this.moveToTop();
+  }
+
+  initPlayerInformation() {
     this.upperLeftLabel.getText().setText(
       'Account username: ' + this.player.address + '\n' +
       'Public key: ' + this.player.data.publicKey + '\n' + 
@@ -117,10 +123,6 @@ class BMUILayer extends BMLayer {
 
     this.btnChangeAccount.x(this.upperLeftLabel.x() + this.upperLeftLabel.getWidth() + 10);
     this.btnChangeAccount.y(this.upperLeftLabel.y());
-
-    // We need to put ui layer at the top of the application
-    // Beacause game layers will be added asynchronously during preload()
-    this.moveToTop();
   }
 }
 
