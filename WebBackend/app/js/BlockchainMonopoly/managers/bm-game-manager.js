@@ -29,7 +29,6 @@ class BMGameManager {
       map: null,
       game: null,
       ui: null,
-      uiActions: null,
       uiHelp: null
     };
 
@@ -151,7 +150,6 @@ class BMGameManager {
     this.layers.map = new BMMapLayer(this.stage, this);
     this.layers.game = new BMGameLayers(this.stage, this);
     this.layers.ui = new BMUILayer(this.stage, this, this.player);
-    this.layers.uiActions = new BMUIActionsLayer(this.stage, this);
     this.layers.uiHelp = new BMUIHelpLayer(this.stage, this);
     // We create the array for more performance.
     // We consider from now that no layer is going to be created

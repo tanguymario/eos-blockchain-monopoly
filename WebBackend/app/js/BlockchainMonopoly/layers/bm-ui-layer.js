@@ -101,10 +101,117 @@ class BMUILayer extends BMLayer {
       }).bind(this)
     );
     this.add(this.btnHelp);
+
+    this.actionsGroup = new Konva.Group({
+      x: this.stage.width() * 0.75,
+      y: 0,
+      width: this.stage.width() * 0.25,
+      height: this.stage.height(),
+      visible: true,
+      listening: true,
+      draggable: false
+    });
+    this.add(this.actionsGroup);
+
+    this.actionsbackground = new Konva.Rect({
+      x: 0,
+      y: 0,
+      width: this.actionsGroup.width(),
+      height: this.actionsGroup.height(),
+      fill: "black",
+      opacity: 0.85,
+      listening: true,
+      draggable: false
+    });
+    this.actionsGroup.add(this.actionsbackground);
+
+    this.labelCity = new Konva.Label({
+      x: this.actionsGroup.width() / 2,
+      y: 50
+    });
+    this.labelCity.add(
+      new Konva.Text({
+        text: "",
+        fill: "white",
+        align: "center",
+        fontSize: 42
+      })
+    );
+    this.actionsGroup.add(this.labelCity);
+
+    this.buttonBuy = new Konva.Image({
+      x: this.actionsGroup.width() / 2,
+      y: (this.actionsGroup.height() / 4) * 1,
+    });
+    this.buttonBuy.width(128);
+    this.buttonBuy.height(128);
+    this.buttonBuy.offsetX(this.buttonBuy.width() / 2);
+    this.buttonBuy.offsetY(this.buttonBuy.height() / 2);
+    this.buttonBuy.on('click', 
+      (function() {
+        // TODO
+        // this.onBtnClick(BMUIActionsLayer.actions().Buy);
+      }).bind(this)
+    );
+    this.actionsGroup.add(this.buttonBuy);
+    this.buttonDescBuy = new Konva.Text({
+      x: this.buttonBuy.x(),
+      y: this.buttonBuy.y() + 50 + this.buttonBuy.height() / 2,
+      text: 'Buy',
+      fontSize: 42,
+      fill: "white",
+      align: "center"
+    });
+    this.buttonDescBuy.setOffset({ x: this.buttonDescBuy.getWidth() / 2 });
+    this.actionsGroup.add(this.buttonDescBuy);
+
+    this.buttonMoveTo = new Konva.Image({
+      x: this.actionsGroup.width() / 2,
+      y: (this.actionsGroup.height() / 4) * 2
+    });
+    this.buttonMoveTo.width(128);
+    this.buttonMoveTo.height(128);
+    this.buttonMoveTo.offsetX(this.buttonMoveTo.width() / 2);
+    this.buttonMoveTo.offsetY(this.buttonMoveTo.height() / 2);
+    this.buttonMoveTo.on('click', 
+      (function() {
+        this.onBtnClick(BMUIActionsLayer.actions().MoveTo);
+      }).bind(this)
+    );
+    this.actionsGroup.add(this.buttonMoveTo);
+    this.buttonDescMoveTo = new Konva.Text({
+      x: this.buttonMoveTo.x(),
+      y: this.buttonMoveTo.y() + 50 + this.buttonMoveTo.height() / 2,
+      text: 'Move To',
+      fontSize: 42,
+      fill: "white",
+      align: "center"
+    });
+    this.buttonDescMoveTo.setOffset({ x: this.buttonDescMoveTo.getWidth() / 2 });
+    this.actionsGroup.add(this.buttonDescMoveTo);
+
+    this.buttonCollect = new Konva.Image({
+      x: this.actionsGroup.width() / 2,
+      y: (this.actionsGroup.height() / 4) * 3
+    });
+    this.actionsGroup.add(this.buttonCollect);    
+    this.buttonDescCollect = new Konva.Text({
+      x: this.buttonCollect.x(),
+      y: this.buttonCollect.y() + 50 + 256 / 2,
+      text: 'Collect Treasure',
+      fontSize: 42,
+      fill: "white",
+      align: "center"
+    });
+    this.buttonDescCollect.setOffset({ x: this.buttonDescCollect.getWidth() / 2 });
+    this.actionsGroup.add(this.buttonDescCollect);
   }
 
   preload() {
     this.gameManager.addImage('assets/imgs/helpButton.png', this.btnHelp);
+    this.gameManager.addImage('assets/imgs/actionBuy.png', this.buttonBuy);
+    this.gameManager.addImage('assets/imgs/actionMoveTo.png', this.buttonMoveTo);
+    this.gameManager.addImage('assets/imgs/actionCollect.png', this.buttonCollect);
   }
 
   start() {

@@ -25,114 +25,17 @@ class BMUIActionsLayer extends BMLayer {
     this.x(0);
     this.y(0);
 
-    this.background = new Konva.Rect({
-      x: 0,
-      y: 0,
-      width: this.width(),
-      height: this.height(),
-      fill: "black",
-      opacity: 0.85,
-      listening: true,
-      draggable: false
-    });
-    this.add(this.background);
-
-    this.labelCity = new Konva.Label({
-      x: this.stage.width() / 2,
-      y: 50
-    });
-    this.labelCity.add(
-      new Konva.Text({
-        text: "",
-        fill: "white",
-        align: "center",
-        fontSize: 42
-      })
-    );
-    this.add(this.labelCity);
-
-    this.buttonBuy = new Konva.Image({
-      x: this.stage.width() / 4,
-      y: this.stage.height() / 2 - 50
-    });
-    this.add(this.buttonBuy);
-    this.buttonDescBuy = new Konva.Text({
-      x: this.buttonBuy.x(),
-      y: this.buttonBuy.y() + 50 + 256 / 2,
-      text: 'Buy',
-      fontSize: 42,
-      fill: "white",
-      align: "center"
-    });
-    this.buttonDescBuy.setOffset({ x: this.buttonDescBuy.getWidth() / 2 });
-    this.add(this.buttonDescBuy);
-
-    this.buttonMoveTo = new Konva.Image({
-      x: (this.stage.width() / 4) * 2,
-      y: this.stage.height() / 2 - 50
-    });
-    this.add(this.buttonMoveTo);
-    this.buttonDescMoveTo = new Konva.Text({
-      x: this.buttonMoveTo.x(),
-      y: this.buttonMoveTo.y() + 50 + 256 / 2,
-      text: 'Move To',
-      fontSize: 42,
-      fill: "white",
-      align: "center"
-    });
-    this.buttonDescMoveTo.setOffset({ x: this.buttonDescMoveTo.getWidth() / 2 });
-    this.add(this.buttonDescMoveTo);
-
-    this.buttonCollect = new Konva.Image({
-      x: (this.stage.width() / 4) * 3,
-      y: this.stage.height() / 2 - 50
-    });
-    this.add(this.buttonCollect);    
-    this.buttonDescCollect = new Konva.Text({
-      x: this.buttonCollect.x(),
-      y: this.buttonCollect.y() + 50 + 256 / 2,
-      text: 'Collect Treasure',
-      fontSize: 42,
-      fill: "white",
-      align: "center"
-    });
-    this.buttonDescCollect.setOffset({ x: this.buttonDescCollect.getWidth() / 2 });
-    this.add(this.buttonDescCollect);
-
-    this.buttonCancel = new Konva.Image({
-      x: this.stage.width() / 2,
-      y: this.stage.height() * 0.9
-    });
-    this.add(this.buttonCancel);
+    
   }
 
   preload() {
-    this.gameManager.addImage('assets/imgs/actionBuy.png', this.buttonBuy);
-    this.gameManager.addImage('assets/imgs/actionMoveTo.png', this.buttonMoveTo);
-    this.gameManager.addImage('assets/imgs/actionCollect.png', this.buttonCollect);
-    this.gameManager.addImage('assets/imgs/actionCancel.png', this.buttonCancel);
+    
   }
 
   start() {
-    this.buttonBuy.width(256);
-    this.buttonBuy.height(256);
-    this.buttonBuy.offsetX(this.buttonBuy.width() / 2);
-    this.buttonBuy.offsetY(this.buttonBuy.height() / 2);
-    this.buttonBuy.on('click', 
-      (function() {
-        this.onBtnClick(BMUIActionsLayer.actions().Buy);
-      }).bind(this)
-    );
+    
 
-    this.buttonMoveTo.width(256);
-    this.buttonMoveTo.height(256);
-    this.buttonMoveTo.offsetX(this.buttonMoveTo.width() / 2);
-    this.buttonMoveTo.offsetY(this.buttonMoveTo.height() / 2);
-    this.buttonMoveTo.on('click', 
-      (function() {
-        this.onBtnClick(BMUIActionsLayer.actions().MoveTo);
-      }).bind(this)
-    );
+    
 
     this.buttonCollect.width(256);
     this.buttonCollect.height(256);
