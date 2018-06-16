@@ -115,13 +115,12 @@ class BMGameManager {
     this.eventsManager.initialize(this);
 
     // Set refresh loop once loaded
-    /*
-    this.refreshIntervalId = setInterval(
+    // TODO change it into setInterval
+    this.refreshIntervalId = setTimeout(
       (function(){
         this.refresh();
       }).bind(this), this.refreshTime
     );
-    */
     
     this.stage.draw();
 
@@ -187,9 +186,8 @@ class BMGameManager {
   }
 
   refresh() {
-    location.reload();
-    console.log("refresh");
-    // this.layers.game.refresh();
+    console.log("[BMGameManager] Refresh");
+    this.layers.game.refresh();
   }
 
   addImage(src, ...konvaNodes) { this._konvaImages.add(src, konvaNodes); }

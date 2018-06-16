@@ -74,6 +74,17 @@ class BMCityView extends Konva.Group {
     );
   }
 
+  removeEvents() {
+    this.off('mouseenter');
+    this.off('mouseout');
+    this.off('click');
+  }
+
+  clearView() {
+    this.setStyle(BMCityStyle.styleClear());
+    this.draw();
+  }
+
   setOwnedCity() {
     this.setStyle(BMCityStyle.styleOwned());
   }
@@ -117,7 +128,33 @@ class BMCityView extends Konva.Group {
   }
 
   setNearCity() {
-    this.setStyle(BMCityStyle.styleNear());
+    var setDefaultStyle;
+    var setNearStyle; 
+    var blinkTime = 500;
+    
+    setDefaultStyle = (function() {
+      this.clearView();
+      this.setStyle(BMCityStyle.styleDefault());
+      this.draw();
+      setTimeout(
+        (function() {
+          setNearStyle();
+        }).bind(this), blinkTime
+      );
+    }).bind(this);
+
+    setNearStyle = (function() {
+      this.clearView();
+      this.setStyle(BMCityStyle.styleNear());
+      this.draw();
+      setTimeout(
+        (function() {
+          setDefaultStyle();
+        }).bind(this), blinkTime
+      );
+    }).bind(this);
+
+    setNearStyle();
   }
 
   setStyle(style) {

@@ -80,6 +80,10 @@ class BMCity {
     }
   }
 
+  removeEvents() {
+    this.view.removeEvents();
+  }
+
   onMouseEnter(evt) {
     this.gameLayer.commonLayer.showTooltip(this);
   }

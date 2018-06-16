@@ -10,6 +10,8 @@ var JSONsLoader = require('../../utils/jsons-loader.js');
 var basics = require('../../utils/basics.js');
 var exists = basics.exists;
 
+var memory = require('../../utils/memory.js');
+
 class BMGameLayers extends BMMultipleLayers {
   constructor(stage, gameManager, options={}) {
     super(stage, gameManager, options);
@@ -100,9 +102,16 @@ class BMGameLayers extends BMMultipleLayers {
 
     this.isRefreshing = true;
     
+    // Online version
+    /*
+
+    */
+    // End online version
+
+    // Local version
     var jsonsLoader = new JSONsLoader();
     jsonsLoader.callbackSuccess = (function() {
-      // this.onRefreshData();
+      this.onRefreshData();
       this.draw();
     }).bind(this);
 
@@ -114,8 +123,10 @@ class BMGameLayers extends BMMultipleLayers {
 
     this.mapCitiesDataJSONLoader = new JSONLoader('assets/json/mapCitiesData.json', { keepData: true });
     jsonsLoader.add(this.mapCitiesDataJSONLoader);
-
     jsonsLoader.load();
+
+    this.debugRefresh = true;
+    // End local version
   }
 
   onRefreshData(blockchainCitiesJSON, mapCitiesJSON, playerJSON) {
@@ -148,46 +159,62 @@ class BMGameLayers extends BMMultipleLayers {
       mapCitiesJSON
     );
 
-    // TODO debug
+    // Start DEBUG MEMORY
+    var citiesKeys = Object.keys(this.cities);
+    citiesKeys.forEach(
+      (function(cityKey) {
+        var city = this.cities[cityKey];
+        city.removeEvents();
+      }).bind(this)
+    );
+
     // Clear game layers and data associated
-    /*
     for (var i = 0; i < this.layers.length; i++) {
       var layer = this.layers[i];
       // Check out the number of nodes (are they the same between refreshes)?
       if (layer instanceof BMGameLayer) {
+        layer.listening(false);
         layer.destroyChildren();
         layer.destroy();
         this.layers.splice(i, 1);
         i--;
       }
     }
-    */
+
     this.cities = {};
     this.connections = [];
 
-    // Create cities and connections
-    this.initializeCities(blockchainCitiesJSON);
-
-    // Initialize player with blockchain data
-    this.gameManager.player.initialize(this.cities, playerJSON);
-
-    // Reposition and rescale the layers 
-    this.scale({
-      x: this.gameManager.eventsManager.scale,
-      y: this.gameManager.eventsManager.scale
-    });
-    this.position(this.gameManager.eventsManager.pos);
-
-    // Always move the common layer to the top
-    this.commonLayer.moveToTop();
-
-    // Move ui layers to the top
-    this.gameManager.layers.ui.moveToTop();
-    this.gameManager.layers.uiHelp.moveToTop();
+    this.stage.clearCache();
+    // End DEBUG MEMORY
     
-    this.gameManager.layers.ui.initPlayerInformation();
+    if (!this.debugRefresh) {
+      // Create cities and connections
+      this.initializeCities(blockchainCitiesJSON);
 
-    this.isRefreshing = false;
+      // Initialize player with blockchain data
+      this.gameManager.player.initialize(this.cities, playerJSON);
+
+      // Reposition and rescale the layers 
+      this.scale({
+        x: this.gameManager.eventsManager.scale,
+        y: this.gameManager.eventsManager.scale
+      });
+      this.position(this.gameManager.eventsManager.pos);
+
+      // Always move the common layer to the top
+      this.commonLayer.moveToTop();
+
+      // Move ui layers to the top
+      this.gameManager.layers.ui.moveToTop();
+      this.gameManager.layers.uiHelp.moveToTop();
+      
+      this.gameManager.layers.ui.initPlayerInformation();
+
+      this.isRefreshing = false;
+
+    }
+
+    console.log(memory.roughSizeOfObject(this));
 
     // Online version
     /*

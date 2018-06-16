@@ -132,7 +132,7 @@ class BMUILayer extends BMLayer {
       height: this.actionsGroup.height(),
       fill: "black",
       opacity: 0.85,
-      listening: true,
+      listening: false,
       draggable: false
     });
     this.actionsGroup.add(this.actionsbackground);
@@ -169,7 +169,7 @@ class BMUILayer extends BMLayer {
       x: this.buttonBuy.x(),
       y: this.buttonBuy.y() + 25 + this.buttonBuy.height() / 2,
       text: 'Buy',
-      fontSize: 42,
+      fontSize: 26,
       fill: "white",
       align: "center"
     });
@@ -194,7 +194,7 @@ class BMUILayer extends BMLayer {
       x: this.buttonMoveTo.x(),
       y: this.buttonMoveTo.y() + 25 + this.buttonMoveTo.height() / 2,
       text: 'Move To',
-      fontSize: 42,
+      fontSize: 26,
       fill: "white",
       align: "center"
     });
@@ -219,7 +219,7 @@ class BMUILayer extends BMLayer {
       x: this.buttonCollect.x(),
       y: this.buttonCollect.y() + 25 + this.buttonCollect.height() / 2,
       text: 'Collect Treasure',
-      fontSize: 42,
+      fontSize: 26,
       fill: "white",
       align: "center"
     });

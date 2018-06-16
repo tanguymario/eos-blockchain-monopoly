@@ -30,8 +30,15 @@ class BMCityStyle {
   static styleNear() {
     return {
       circleCityStroke: "red",
-      circleCityStrokeWidth: 2.0
+      circleCityStrokeWidth: 4.0
     }; 
+  }
+
+  static styleClear() {
+    return {
+      circleCityStroke: "white",
+      circleCityFill: "white"
+    }
   }
 
   constructor(style) {
