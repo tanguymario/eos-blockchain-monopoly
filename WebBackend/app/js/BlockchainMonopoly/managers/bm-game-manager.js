@@ -11,7 +11,6 @@ var BMPlayer = require('../data-classes/bm-player.js');
 var BMMapLayer = require('../layers/bm-map-layer.js');
 var BMGameLayers = require('../layers/bm-game-layers.js');
 var BMUILayer = require('../layers/bm-ui-layer.js');
-var BMUIActionsLayer = require('../layers/bm-ui-actions-layer.js');
 var BMUIHelpLayer = require('../layers/bm-ui-help-layer.js');
 
 var TimeManager = require('./time-manager.js');

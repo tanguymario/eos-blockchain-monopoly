@@ -49,8 +49,8 @@ class BMPlayer {
 
     var currentPlayerCity = cities[playerJSON.currentCityId];
     if (currentPlayerCity) {
-      currentPlayerCity.setCurrentCity(this);
       this.currentCity = currentPlayerCity;
+      currentPlayerCity.setCurrentCity(this);
     }
   }
 }

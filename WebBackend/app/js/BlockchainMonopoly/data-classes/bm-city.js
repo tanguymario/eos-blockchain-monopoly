@@ -1,6 +1,6 @@
 var BMCityStyle = require('./bm-city-style.js');
 var BMCityView = require('./bm-city-view.js');
-var BMUIActionsLayer = require('../layers/bm-ui-actions-layer.js');
+var BMUILayer = require('../layers/bm-ui-layer.js');
 var constants = require('../../utils/constants.js');
 
 class BMCity {
@@ -36,14 +36,14 @@ class BMCity {
   setOwnedCity() {
     this.ownedByPlayer = true;
     if (!this.currentCityPlayer) {
-      this.view.setStyle(BMCityStyle.styleOwned());
+      this.view.setOwnedCity();
     }
   }
 
   setCurrentCity(player) {
     this.currentCityPlayer = true;
     this.player = player;
-    this.view.setStyle(BMCityStyle.styleCurrent());
+    this.view.setCurrentCity();
 
     this.connections.forEach(
       (function(connection) {
@@ -51,27 +51,28 @@ class BMCity {
         connection.city1.setNearCity();
       }).bind(this)
     );
+
+    // We set the default city here
+    this.setupCityActions();
   }
 
   setNearCity() {
     if (!this.currentCityPlayer) {
       this.isNearFromPlayer = true;
-      this.view.setStyle(BMCityStyle.styleNear());
+      this.view.setNearCity();
     }
   }
 
   onCallbackAction(action) {
     switch (action) {
-      case BMUIActionsLayer.actions().Buy:
+      case BMUILayer.Actions().Buy:
         this.gameManager.buyCity(this);
         break;
-      case BMUIActionsLayer.actions().MoveTo:
+      case BMUILayer.Actions().MoveTo:
         this.gameManager.moveToCity(this); 
         break;
-      case BMUIActionsLayer.actions().Collect:
+      case BMUILayer.Actions().Collect:
         this.gameManager.collectCityTreasure(this);
-        break;
-      case BMUIActionsLayer.actions().Cancel:
         break;
       default:
         console.warn("[BMCity] Unknown action", action);
@@ -90,12 +91,7 @@ class BMCity {
   onClick(evt) {
     switch (evt.evt.button) {
       case constants.BTN_LEFT_CLICK:
-        this.gameManager.layers.uiActions.ask(
-          this,
-          (function(action) {
-            this.onCallbackAction(action);
-          }).bind(this)
-        );
+        this.setupCityActions();
         break;
       case constants.BTN_MIDDLE_CLICK:
         break;
@@ -104,6 +100,15 @@ class BMCity {
       default:
         break;
     }
+  }
+
+  setupCityActions() {
+    this.gameManager.layers.ui.setupActions(
+      this,
+      (function(action) {
+        this.onCallbackAction(action);
+      }).bind(this)
+    );
   }
 }
 

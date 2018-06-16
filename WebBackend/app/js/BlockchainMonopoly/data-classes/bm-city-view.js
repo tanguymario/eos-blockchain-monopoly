@@ -4,14 +4,16 @@ var mathUtils = require('../../utils/math-utils.js');
 var constants = require('../../utils/constants.js');
 
 class BMCityView extends Konva.Group {
+  static GroupSize() { return 32; }
+
   constructor(stage, city, layer, style) {
     var cityNormalizedCoords = mathUtils.lonlat2coord(city.data.lon, city.data.lat);
 
     super({
       x: cityNormalizedCoords.x * stage.width(),
       y: cityNormalizedCoords.y * stage.height(),
-      width: 32,
-      height: 32,
+      width: BMCityView.GroupSize(),
+      height: BMCityView.GroupSize(),
       draggable: false,
       listening: true
     });
@@ -70,6 +72,52 @@ class BMCityView extends Konva.Group {
         this.city.onClick(evt);
       }).bind(this)
     );
+  }
+
+  setOwnedCity() {
+    this.setStyle(BMCityStyle.styleOwned());
+  }
+
+  setCurrentCity() {
+    var labelCurrentCity = new Konva.Label({
+      x: 0,
+      y: - BMCityView.GroupSize() / 2,
+      opacity: 0.85,
+      visible: true,
+      listening: false
+    });
+    this.add(labelCurrentCity);
+    labelCurrentCity.add(
+      new Konva.Tag({
+        fill: 'black',
+        pointerDirection: 'down',
+        pointerWidth: 10,
+        pointerHeight: 10,
+        lineJoin: 'round',
+        shadowColor: 'black',
+        cornerRadius: 10,
+        shadowBlur: 10,
+        shadowOffset: 10,
+        shadowOpacity: 0.5,
+        listening: false
+      })
+    );
+    labelCurrentCity.add(
+      new Konva.Text({
+        text: 'You are here',
+        fontFamily: 'Calibri',
+        fontSize: 18,
+        padding: 5,
+        fill: 'white',
+        listening: false
+      })
+    );
+
+    this.setStyle(BMCityStyle.styleCurrent());
+  }
+
+  setNearCity() {
+    this.setStyle(BMCityStyle.styleNear());
   }
 
   setStyle(style) {
