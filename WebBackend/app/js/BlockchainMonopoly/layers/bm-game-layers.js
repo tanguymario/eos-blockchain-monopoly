@@ -17,6 +17,7 @@ class BMGameLayers extends BMMultipleLayers {
     super(stage, gameManager, options);
     
     this.cities = {};
+    this.citiesViews = {};
     this.connections = [];
 
     this.isRefreshing = false;
@@ -168,11 +169,16 @@ class BMGameLayers extends BMMultipleLayers {
       }).bind(this)
     );
 
+    console.log('length before: ', this.layers.length);
+
+    this.cities = {};
     // Clear game layers and data associated
     for (var i = 0; i < this.layers.length; i++) {
       var layer = this.layers[i];
       // Check out the number of nodes (are they the same between refreshes)?
       if (layer instanceof BMGameLayer) {
+        console.log('here')
+        layer.clear();
         layer.listening(false);
         layer.destroyChildren();
         layer.destroy();
@@ -181,13 +187,17 @@ class BMGameLayers extends BMMultipleLayers {
       }
     }
 
-    this.cities = {};
+    
+    console.log('length after: ', this.layers.length);
+
     this.connections = [];
 
     this.stage.clearCache();
+
     // End DEBUG MEMORY
     
     if (!this.debugRefresh) {
+
       // Create cities and connections
       this.initializeCities(blockchainCitiesJSON);
 
@@ -212,8 +222,7 @@ class BMGameLayers extends BMMultipleLayers {
 
       this.isRefreshing = false;
 
-    }
-
+    } 
     console.log(memory.roughSizeOfObject(this));
 
     // Online version
@@ -311,6 +320,7 @@ class BMGameLayers extends BMMultipleLayers {
         var cityJSON = citiesJSON[cityJSONKey];
         var layer = this.getLayerAt(cityJSON.layerIndex);
         var city = new BMCity(cityJSONKey, cityJSON, layer, this);
+        var view = new BMCityView(this.stage, city, layer);
         this.cities[cityJSONKey] = city;
       }).bind(this)
     );

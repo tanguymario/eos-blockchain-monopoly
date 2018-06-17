@@ -25,7 +25,7 @@ class BMPlayer {
     return address;
   }
 
-  initialize(cities, playerJSON) {
+  initialize(cities, citiesViews, citiesConnections, playerJSON) {
     if (!exists(cities)) {
       console.error("[BMPlayer] Cities missing!");
       return;

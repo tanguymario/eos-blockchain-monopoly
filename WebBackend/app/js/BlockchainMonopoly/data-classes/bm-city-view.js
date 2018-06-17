@@ -18,7 +18,6 @@ class BMCityView extends Konva.Group {
       listening: true
     });
 
-    this.stage = stage;
     this.city = city;
 
     this.layer = layer;
@@ -86,7 +85,10 @@ class BMCityView extends Konva.Group {
   }
 
   setOwnedCity() {
-    this.setStyle(BMCityStyle.styleOwned());
+    this.city.ownedByPlayer = true;
+    if (!this.currentCityPlayer) {
+      this.setStyle(BMCityStyle.styleOwned());
+    }
   }
 
   setCurrentCity() {

@@ -188,6 +188,7 @@ class BMGameManager {
   refresh() {
     console.log("[BMGameManager] Refresh");
     this.layers.game.refresh();
+    this._updateLayersArray();
   }
 
   addImage(src, ...konvaNodes) { this._konvaImages.add(src, konvaNodes); }

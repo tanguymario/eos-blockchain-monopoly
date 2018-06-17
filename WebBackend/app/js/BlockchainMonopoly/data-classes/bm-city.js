@@ -4,22 +4,18 @@ var BMUILayer = require('../layers/bm-ui-layer.js');
 var constants = require('../../utils/constants.js');
 
 class BMCity {
-  constructor(cityJSONId, cityJSON, layer, gameLayer) {
+  constructor(cityJSONId, cityJSON, layer, gameLayers) {
     this.id = cityJSONId;
     this.data = cityJSON;
 
     this.layer = layer;
-    this.gameLayer = gameLayer;
-    this.stage = this.gameLayer.stage;
-    this.gameManager = this.gameLayer.gameManager;
-
+    this.gameLayers = gameLayers;
+    
     this.ownedByPlayer = false;
     this.currentCityPlayer = false;
     this.isNearFromPlayer = false;
 
     this.connections = [];
-
-    this.view = new BMCityView(this.stage, this, this.layer);
   }
 
   getNeighbours() {
@@ -31,13 +27,6 @@ class BMCity {
       }).bind(this)
     );
     return neighbours;
-  }
-
-  setOwnedCity() {
-    this.ownedByPlayer = true;
-    if (!this.currentCityPlayer) {
-      this.view.setOwnedCity();
-    }
   }
 
   setCurrentCity(player) {
@@ -66,13 +55,13 @@ class BMCity {
   onCallbackAction(action) {
     switch (action) {
       case BMUILayer.Actions().Buy:
-        this.gameManager.buyCity(this);
+        this.layer.gameManager.buyCity(this);
         break;
       case BMUILayer.Actions().MoveTo:
-        this.gameManager.moveToCity(this); 
+        this.layer.gameManager.moveToCity(this); 
         break;
       case BMUILayer.Actions().Collect:
-        this.gameManager.collectCityTreasure(this);
+        this.layer.gameManager.collectCityTreasure(this);
         break;
       default:
         console.warn("[BMCity] Unknown action", action);
@@ -85,11 +74,11 @@ class BMCity {
   }
 
   onMouseEnter(evt) {
-    this.gameLayer.commonLayer.showTooltip(this);
+    this.gameLayers.commonLayer.showTooltip(this);
   }
 
   onMouseOut(evt) {
-    this.gameLayer.commonLayer.hideTooltip(this);
+    this.gameLayers.commonLayer.hideTooltip(this);
   }
 
   onClick(evt) {
@@ -107,7 +96,7 @@ class BMCity {
   }
 
   setupCityActions() {
-    this.gameManager.layers.ui.setupActions(
+    this.layer.gameManager.layers.ui.setupActions(
       this,
       (function(action) {
         this.onCallbackAction(action);

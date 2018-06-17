@@ -21,8 +21,17 @@ var getPromptString = function(msg, defaultValue) {
   return inputString;
 }
 
+var destroyObject = function(o) {
+  var oKeys = Object.keys(o);
+  var nbOKeys = oKeys.length;
+  for (var i = 0; i < nbOKeys; i++) { 
+    o[oKeys[i]] = null;
+  }
+}
+
 module.exports.exists = exists;
 module.exports.isFunction = isFunction;
 module.exports.executeFunctionSafely = executeFunctionSafely;
 module.exports.getArgOrDefault = getArgOrDefault;
 module.exports.getPromptString = getPromptString;
+module.exports.destroyObject = destroyObject;
