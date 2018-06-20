@@ -116,7 +116,7 @@ class BMGameManager {
 
     // Set refresh loop once loaded
     // TODO change it into setInterval
-    this.refreshIntervalId = setTimeout(
+    this.refreshIntervalId = setInterval(
       (function(){
         this.refresh();
       }).bind(this), this.refreshTime

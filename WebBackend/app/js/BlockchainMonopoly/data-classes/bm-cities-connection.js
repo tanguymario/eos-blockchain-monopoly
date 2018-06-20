@@ -1,3 +1,5 @@
+var basics = require('../../utils/basics.js');
+
 class BMCitiesConnection extends Konva.Line {
   
   static initialStrokeWidth() { return 1.0; }
@@ -29,6 +31,10 @@ class BMCitiesConnection extends Konva.Line {
     
     this.layer.add(this);
     this.moveToBottom();
+  }
+
+  destroyJSObject() {
+    basics.destroyObject(this);
   }
 
   scale(scale) {

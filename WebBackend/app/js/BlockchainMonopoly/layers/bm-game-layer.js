@@ -1,5 +1,7 @@
 var BMLayer = require('../abstract/bm-layer.js');
 
+var basics = require('../../utils/basics.js');
+
 class BMGameLayer extends BMLayer {
   static INIT_ZOOM_FACTOR() { return 2.5; }
 
@@ -15,6 +17,10 @@ class BMGameLayer extends BMLayer {
     //  - groups of cities
     // Create bounds and then check if bounds check screen
     // If yes then draw
+  }
+
+  destroyJSObject() {
+    basics.destroyObject(this);
   }
 
   scale(scale) {

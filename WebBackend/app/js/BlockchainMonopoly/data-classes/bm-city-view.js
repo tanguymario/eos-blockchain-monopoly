@@ -1,6 +1,7 @@
 var BMCityStyle = require('./bm-city-style.js');
 var stringUtils = require('../../utils/string-utils.js');
 var mathUtils = require('../../utils/math-utils.js');
+var basics = require('../../utils/basics.js');
 var constants = require('../../utils/constants.js');
 
 class BMCityView extends Konva.Group {
@@ -29,7 +30,15 @@ class BMCityView extends Konva.Group {
     this.createKonvaNodes();
     this.attachEvents();
 
+    this.blinkingIntervalId = null;
+
     this.style.update(this.circleCity, this.circlePlayer);
+  }
+
+  destroyJSObject() {
+    clearTimeout(this.blinkingIntervalId);
+    this.style.destroyJSObject();
+    basics.destroyObject(this);
   }
 
   createKonvaNodes() {
@@ -136,7 +145,7 @@ class BMCityView extends Konva.Group {
       this.clearView();
       this.setStyle(BMCityStyle.styleDefault());
       this.draw();
-      setTimeout(
+      this.blinkingIntervalId = setTimeout(
         (function() {
           setNearStyle();
         }).bind(this), blinkTime
@@ -147,7 +156,7 @@ class BMCityView extends Konva.Group {
       this.clearView();
       this.setStyle(BMCityStyle.styleNear());
       this.draw();
-      setTimeout(
+      this.blinkingIntervalId = setTimeout(
         (function() {
           setDefaultStyle();
         }).bind(this), blinkTime

@@ -1,3 +1,5 @@
+var basics = require('../../utils/basics.js');
+
 class BMCityStyle {
   
   static initialSize() { return 32; }
@@ -46,6 +48,10 @@ class BMCityStyle {
     if (style) {
       this.setStyle(style);
     }
+  }
+
+  destroyJSObject() {
+    basics.destroyObject(this);
   }
 
   setStyle(style) {

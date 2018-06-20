@@ -1,6 +1,7 @@
 var BMCityStyle = require('./bm-city-style.js');
 var BMCityView = require('./bm-city-view.js');
 var BMUILayer = require('../layers/bm-ui-layer.js');
+var basics = require('../../utils/basics.js');
 var constants = require('../../utils/constants.js');
 
 class BMCity {
@@ -20,6 +21,11 @@ class BMCity {
     this.connections = [];
 
     this.view = new BMCityView(this.stage, this, this.layer);
+  }
+
+  destroyJSObject() {
+    this.view.destroyJSObject();
+    basics.destroyObject(this);
   }
 
   getNeighbours() {
