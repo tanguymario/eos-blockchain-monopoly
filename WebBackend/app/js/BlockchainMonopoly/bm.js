@@ -14,7 +14,8 @@ class BM {
     });
 
     this.eventsManager = new BMEventsManager(this.stage);
-    this.gameManager = new BMGameManager(this.stage, this.eventsManager);
+    this.gameManager =  new BMGameManager(this.stage, this.eventsManager);
+
   }
 }
 

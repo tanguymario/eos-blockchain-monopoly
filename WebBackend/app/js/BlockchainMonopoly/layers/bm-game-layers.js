@@ -31,39 +31,11 @@ class BMGameLayers extends BMMultipleLayers {
     this.isRefreshing = true;
 
     // Online version
-    /*
-    this.gameManager.blockchainInterface.getCities().then(blockchainCitiesJSON => {
-      this.gameManager.blockchainInterface.getPlayer().then(blockchainPlayersJSON => {
-        new JSONLoader('assets/json/mapCitiesData.json', {
-          callbackSuccess: (function(mapCitiesJSON) {
-            new JSONLoader('assets/json/blockchainPlayer.json', {
-              callbackSuccess: (function(playerJSON) {
-
-                console.log(blockchainCitiesJSON);
-                console.log(blockchainPlayersJSON);
-
-                blockchainPlayersJSON.forEach(
-                  (function(blockchainPlayer) {
-                    if (blockchainPlayer.account === playerJSON.account) {
-                      playerJSON.balance = blockchainPlayer.balance;
-                      playerJSON.currentCityId = blockchainPlayer.currentCityId.toString();
-                    }
-                  }).bind(this)
-                );                
-
-                this.onRefreshData(blockchainCitiesJSON, mapCitiesJSON, playerJSON);
-
-              }).bind(this)
-            }).load();
-          }).bind(this)
-        }
-      ).load();
-      });
-    });
-    */
+    this.collectData();
     // End online version
 
     // Local version
+    /*
     this.blockchainCitiesDataJSONLoader = new JSONLoader('assets/json/blockchainLocalTest.json', { keepData: true });
     this.gameManager.addJSONLoader(this.blockchainCitiesDataJSONLoader);
 
@@ -72,15 +44,42 @@ class BMGameLayers extends BMMultipleLayers {
 
     this.mapCitiesDataJSONLoader = new JSONLoader('assets/json/mapCitiesData.json', { keepData: true });
     this.gameManager.addJSONLoader(this.mapCitiesDataJSONLoader);
+    */
     // End local version
   }
 
   start() {
-    this.onRefreshData();
+    // this.onRefreshData();
   }
 
   update() {
 
+  }
+
+  collectData() {
+    this.gameManager.blockchainInterface.getCities().then(blockchainInterfaceCitiesOutput => {
+      var blockchainCitiesJSON;
+      try {
+        blockchainCitiesJSON = JSON.parse(blockchainInterfaceCitiesOutput.result);
+      } catch(e) {
+        console.error(e);
+        return;
+      }
+
+      this.gameManager.blockchainInterface.getPlayerPosition(this.gameManager.player.address).then(blockchainPlayerJSON => {
+        new JSONLoader('assets/json/mapCitiesData.json', {
+          callbackSuccess: (function(mapCitiesJSON) {
+
+                console.log("thats me");
+                console.log(blockchainCitiesJSON);
+                console.log(blockchainPlayerJSON);
+
+                this.onRefreshData(blockchainCitiesJSON, mapCitiesJSON, blockchainPlayerJSON);
+          }).bind(this)
+        }
+      ).load();
+      });
+    });
   }
 
   getGameLayers() {
@@ -103,12 +102,11 @@ class BMGameLayers extends BMMultipleLayers {
     this.isRefreshing = true;
     
     // Online version
-    /*
-
-    */
+    this.collectData();
     // End online version
 
     // Local version
+    /*
     var jsonsLoader = new JSONsLoader();
     jsonsLoader.callbackSuccess = (function() {
       this.onRefreshData();
@@ -124,13 +122,13 @@ class BMGameLayers extends BMMultipleLayers {
     this.mapCitiesDataJSONLoader = new JSONLoader('assets/json/mapCitiesData.json', { keepData: true });
     jsonsLoader.add(this.mapCitiesDataJSONLoader);
     jsonsLoader.load();
-
-    this.debugRefresh = true;
+    */
     // End local version
   }
 
   onRefreshData(blockchainCitiesJSON, mapCitiesJSON, playerJSON) {
     // Local version
+    /*
     blockchainCitiesJSON = this.blockchainCitiesDataJSONLoader.getData();
     this.blockchainCitiesDataJSONLoader.clean();
     delete this.blockchainCitiesDataJSONLoader;
@@ -140,6 +138,7 @@ class BMGameLayers extends BMMultipleLayers {
     playerJSON = this.blockchainPlayerDataJSONLoader.getData();
     this.blockchainPlayerDataJSONLoader.clean();
     delete this.blockchainPlayerDataJSONLoader;
+    */
     // End local version
     
     if (!exists(blockchainCitiesJSON)) {
@@ -218,13 +217,19 @@ class BMGameLayers extends BMMultipleLayers {
     this.gameManager.layers.uiHelp.moveToTop();
     
     this.gameManager.layers.ui.initPlayerInformation();
-
+  
+    var previousSelectedCityId = this.gameManager.layers.ui._cityId;
+    var previousSelectedCity = this.cities[previousSelectedCityId];
+    if (!exists(previousSelectedCity)) {
+      this.gameManager.layers.ui.setupActions(previousSelectedCity);
+    } else {
+      previousSelectedCity.setupCityActions();
+    }
+    
     this.isRefreshing = false;
 
     // Online version
-    /*
     this.stage.draw();
-    */
     // End online version
   }
 

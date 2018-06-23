@@ -18,8 +18,8 @@ class BMPlayer {
 
   _getAddress() {
     var address = store.get(BMPlayer.StoreStringID);
-    if (!exists(address)) {
-      address = getPromptString("Please enter your user account name");
+    while (address == null || address.length != 35) {
+      address = getPromptString("Please enter your user 35-character-long account address");
     }
     store.set(BMPlayer.StoreStringID, address); 
     return address;
@@ -34,6 +34,7 @@ class BMPlayer {
       return;
     }
 
+    this.ownedCities = [];
     this.data = playerJSON;
 
     var citiesKeys = Object.keys(cities);
@@ -47,7 +48,7 @@ class BMPlayer {
       }).bind(this)
     );
 
-    var currentPlayerCity = cities[playerJSON.currentCityId];
+    var currentPlayerCity = cities[this.data.result];
     if (currentPlayerCity) {
       this.currentCity = currentPlayerCity;
       currentPlayerCity.setCurrentCity(this);

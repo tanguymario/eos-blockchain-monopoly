@@ -195,27 +195,15 @@ class BMGameManager {
   addJSONsLoader(jsonsLoader) { this._jsonsLoaders.push(jsonsLoader); }
 
   buyCity(city) {
-    this.blockchainInterface.buyCity(city, this.player).then(n => {
-      this.refresh();
-    }).catch(err => {
-      console.log(err);
-    });
+    this.blockchainInterface.buy(city.id, city.data.price, function(){});
   }
 
   moveToCity(city) {
-    this.blockchainInterface.moveToCity(city, this.player).then(n => {
-      this.refresh();
-    }).catch(err => {
-      console.log(err);
-    });
+    this.blockchainInterface.moveTo(city, this.player, function(){});
   }
 
   collectCityTreasure(city) {
-    this.blockchainInterface.collectTreasure(city, this.player).then(n => {
-      this.refresh();
-    }).catch(err => {
-      console.log(err);
-    });
+    this.blockchainInterface.claimTreasure(city.id, function(){});
   }
 
   changeAccount() {

@@ -245,7 +245,7 @@ class BMUILayer extends BMLayer {
   initPlayerInformation() {
     this.upperLeftLabel.getText().setText(
       'Account username: ' + this.player.address + '\n' +
-      'Balance: ' + this.player.data.balance + '\n' + 
+      //'Balance: ' + this.player.data.balance + '\n' + 
       'Number of owned cities: ' + this.player.ownedCities.length + '\n' +
       'Location: ' + (this.player.currentCity ? this.player.currentCity.data.name : "-")
     );
@@ -331,6 +331,11 @@ class BMUILayer extends BMLayer {
         this.buttonCollect.opacity(1.0);
         this.buttonDescCollect.opacity(1.0);
       }
+    }
+    
+    this._cityId = null;
+    if (city) {
+      this._cityId = city.id;
     }
     
     this._callbackAction = callbackAction;

@@ -3,6 +3,7 @@ var stringUtils = require('../../utils/string-utils.js');
 var mathUtils = require('../../utils/math-utils.js');
 var basics = require('../../utils/basics.js');
 var constants = require('../../utils/constants.js');
+var KonvaImages = require('../../utils/konva-images.js');
 
 class BMCityView extends Konva.Group {
   static GroupSize() { return 32; }
@@ -58,6 +59,34 @@ class BMCityView extends Konva.Group {
       visible: !stringUtils.isNullOrEmpty(this.city.data.owner)
     });
     this.add(this.circlePlayer);
+
+    var treasure = 0;
+    try {
+      treasure = parseFloat(this.city.data.treasure);
+    } catch(e) {
+      console.error("[BMCityView] City treasure is not a float");
+    }
+    
+    if (treasure) {
+      var treasureIcon = new Konva.Image({
+        x: BMCityView.GroupSize() / 2,
+        y: BMCityView.GroupSize() / 2,
+        width: BMCityView.GroupSize(),
+        height: BMCityView.GroupSize(),
+        offsetX: BMCityView.GroupSize() / 2,
+        offsetY: BMCityView.GroupSize() / 2,
+        listening: false,
+        opacity: 0.75
+      });
+      this.add(treasureIcon);
+      var konvaImages = new KonvaImages();
+      konvaImages.add('assets/imgs/actionCollect.png', treasureIcon);
+      konvaImages.load(function(){}, 
+        (function() {
+          this.draw();
+        }).bind(this)
+      );
+    }
   }
 
   attachEvents() {
@@ -137,13 +166,15 @@ class BMCityView extends Konva.Group {
   }
 
   setNearCity() {
-    var setDefaultStyle;
+    var setOriginStyle;
     var setNearStyle; 
     var blinkTime = 500;
     
-    setDefaultStyle = (function() {
+    var originalStyle = Object.assign({},this.style);
+
+    setOriginStyle = (function() {
       this.clearView();
-      this.setStyle(BMCityStyle.styleDefault());
+      this.setStyle(originalStyle);
       this.draw();
       this.blinkingIntervalId = setTimeout(
         (function() {
@@ -158,7 +189,7 @@ class BMCityView extends Konva.Group {
       this.draw();
       this.blinkingIntervalId = setTimeout(
         (function() {
-          setDefaultStyle();
+          setOriginStyle();
         }).bind(this), blinkTime
       );
     }).bind(this);

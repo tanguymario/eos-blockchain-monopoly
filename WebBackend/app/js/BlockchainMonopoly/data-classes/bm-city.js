@@ -3,12 +3,19 @@ var BMCityView = require('./bm-city-view.js');
 var BMUILayer = require('../layers/bm-ui-layer.js');
 var basics = require('../../utils/basics.js');
 var constants = require('../../utils/constants.js');
+var BlockchainInterface = require('../backend/blockchain-interface.js');
 
 class BMCity {
   constructor(cityJSONId, cityJSON, layer, gameLayer) {
     this.id = cityJSONId;
     this.data = cityJSON;
 
+    if (this.data.price) {
+      this.data.price = BlockchainInterface.basicToNas(this.data.price);
+    }
+
+    this.data.treasure = BlockchainInterface.basicToNas(this.data.treasure);
+    
     this.layer = layer;
     this.gameLayer = gameLayer;
     this.stage = this.gameLayer.stage;
@@ -59,7 +66,7 @@ class BMCity {
     );
 
     // We set the default city here
-    this.setupCityActions();
+    // this.setupCityActions();
   }
 
   setNearCity() {
