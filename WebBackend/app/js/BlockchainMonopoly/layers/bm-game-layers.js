@@ -70,9 +70,9 @@ class BMGameLayers extends BMMultipleLayers {
         new JSONLoader('assets/json/mapCitiesData.json', {
           callbackSuccess: (function(mapCitiesJSON) {
 
-                console.log("thats me");
-                console.log(blockchainCitiesJSON);
-                console.log(blockchainPlayerJSON);
+                // console.log("thats me");
+                // console.log(blockchainCitiesJSON);
+                // console.log(blockchainPlayerJSON);
 
                 this.onRefreshData(blockchainCitiesJSON, mapCitiesJSON, blockchainPlayerJSON);
           }).bind(this)

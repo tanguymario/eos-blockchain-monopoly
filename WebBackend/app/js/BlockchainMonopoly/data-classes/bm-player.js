@@ -19,7 +19,7 @@ class BMPlayer {
   _getAddress() {
     var address = store.get(BMPlayer.StoreStringID);
     while (address == null || address.length != 35) {
-      address = getPromptString("Please enter your user 35-character-long account address");
+      address = getPromptString("Please enter your 35-character-long account address");
     }
     store.set(BMPlayer.StoreStringID, address); 
     return address;

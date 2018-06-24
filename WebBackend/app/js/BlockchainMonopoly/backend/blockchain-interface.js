@@ -4,9 +4,9 @@ Account = nebulas.Account,
 Unit = nebulas.Unit,
 neb = new nebulas.Neb();
 var api = neb.api;
-neb.setRequest(new nebulas.HttpRequest("http://localhost:8685"))
+//neb.setRequest(new nebulas.HttpRequest("http://localhost:8685"))
 //neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"))
-//neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"))
+neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"))
 
 var NebPay = require("nebpay");
 var nebPay = new NebPay();
@@ -33,7 +33,9 @@ function nebPayCallPromise(to, value, callFunction, callArgs, cb) {
 
 class BlockchainInterface {
     constructor() {
-        this.dappAddress = "n1qgXx1XhejG4SrMCe6oZBe2E8sf4SY4gM8";
+        //this.dappAddress = "n1qgXx1XhejG4SrMCe6oZBe2E8sf4SY4gM8"; //local
+        //this.dappAddress = "n22FPNrDvDz6zJUBteX5jCMxWjgcgR6Toq6"; //testnet
+        this.dappAddress = "n22FPNrDvDz6zJUBteX5jCMxWjgcgR6Toq6"; //mainnet
         this.assistantAccount = Account.NewAccount()
     }
 
@@ -115,7 +117,7 @@ class BlockchainInterface {
     moveTo(city, player, callback) {
         var to = this.dappAddress;
         var value = city.data.price * 0.01;
-        if (city.ownedByPlayer) {
+        if (city.ownedByPlayer || city.data.owner == null) {
           value = 0;
         }
         var callFunction = "move"
